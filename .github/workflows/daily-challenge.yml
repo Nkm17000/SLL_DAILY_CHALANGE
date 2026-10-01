@@ -22,7 +22,7 @@ concurrency:
 jobs:
   publish:
     # A state-only commit made by this workflow should not publish again.
-    if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'chore: update daily challenge state')
+    if: "${{ github.event_name != 'push' || github.event.head_commit.message != 'chore: update daily challenge state' }}"
     runs-on: ubuntu-latest
 
     steps:

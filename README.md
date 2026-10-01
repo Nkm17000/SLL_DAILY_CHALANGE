@@ -236,3 +236,6 @@ Generate all 10 theme previews:
 ```bash
 python app.py --index 1 --count 10
 ```
+
+## GitHub Actions
+The workflow runs on push to `main`, manual `workflow_dispatch`, and twice daily at 09:00 and 19:00 IST. Its own state-only commit is skipped to prevent a publish loop.
