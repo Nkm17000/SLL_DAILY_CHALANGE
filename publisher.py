@@ -12,10 +12,33 @@ TZ=ZoneInfo(os.getenv('TIMEZONE','Asia/Kolkata'))
 
 def load_state():
     p=ROOT/'state.json'
-    if p.exists():
-        try: return json.loads(p.read_text(encoding='utf-8'))
-        except Exception: pass
-    return {'next_index':{},'history':[],'theme_counter':0}
+    default={'next_index':{},'history':[],'theme_counter':0}
+    if not p.exists():
+        return default
+    try:
+        state=json.loads(p.read_text(encoding='utf-8'))
+    except Exception:
+        return default
+
+    # Migrate state from the original single-content project, where
+    # next_index was an integer. The multi-content engine requires a
+    # per-content mapping. Preserve the old number as the starting index
+    # for daily_challenge so an existing repository does not crash.
+    if isinstance(state, dict) and isinstance(state.get('next_index'), int):
+        legacy_index=max(1, int(state['next_index']))
+        state['next_index']={'daily_challenge': legacy_index}
+
+    if not isinstance(state, dict):
+        return default
+    if not isinstance(state.get('next_index'), dict):
+        state['next_index']={}
+    if not isinstance(state.get('history'), list):
+        state['history']=[]
+    try:
+        state['theme_counter']=int(state.get('theme_counter',0))
+    except (TypeError, ValueError):
+        state['theme_counter']=0
+    return state
 
 def save_state(s):
     (ROOT/'state.json').write_text(json.dumps(s,indent=2,ensure_ascii=False),encoding='utf-8')

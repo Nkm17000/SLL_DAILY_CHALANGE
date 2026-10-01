@@ -146,3 +146,9 @@ For Instagram image publishing, the project stages the image as an unpublished F
 ## Safety/content notes
 
 Cyber-safety content is defensive and educational. It does not provide instructions for harmful activity. AI content asks users to verify important claims and treat generated output as a draft.
+
+## State compatibility fix
+
+The content engine supports both the new multi-content `state.json` format and the original Daily Challenge format where `next_index` was a single integer. If an existing repository still contains the old format, the publisher automatically migrates that value to `next_index.daily_challenge` instead of failing with `AttributeError: 'int' object has no attribute 'get'`.
+
+`publish_daily.py` also forwards `SCHEDULE_CRON` to the publisher so scheduled GitHub Actions runs select the exact content type associated with the scheduled slot.
