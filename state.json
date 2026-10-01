@@ -7,7 +7,8 @@
     "ai_challenge": 2,
     "this_or_that": 2,
     "tech_explained": 2,
-    "weekly_mission": 2
+    "weekly_mission": 2,
+    "science_challenge": 2
   },
   "history": [
     {
@@ -148,7 +149,22 @@
         "id": "18125857262497250"
       },
       "staged_facebook_photo_id": "122122058457419769"
+    },
+    {
+      "timestamp": 1790883823,
+      "content_type": "science_challenge",
+      "index": 1,
+      "id": "sll-science-challenge-0001",
+      "theme": "Gold Navy",
+      "facebook": {
+        "id": "122122064565419769",
+        "post_id": "1317018278163213_122122064583419769"
+      },
+      "instagram": {
+        "id": "18126792742892334"
+      },
+      "staged_facebook_photo_id": "122122064499419769"
     }
   ],
-  "theme_counter": 8
+  "theme_counter": 9
 }
