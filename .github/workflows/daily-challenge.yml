@@ -1,12 +1,8 @@
 name: Smart Learning Lab Daily Challenge
 
 on:
-  # Publish whenever code/content is pushed.
-  push:
-    paths-ignore:
-      - 'state.json'
-
-  # Publish manually from GitHub Actions -> Run workflow.
+  # IMPORTANT: Do not publish on git push.
+  # This keeps normal commits and empty commits from triggering a post.
   workflow_dispatch:
 
   # Twice every day in Asia/Kolkata:
@@ -32,6 +28,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -52,14 +49,38 @@ jobs:
           TIMEZONE: Asia/Kolkata
         run: python publish_daily.py
 
-      - name: Save challenge state
+      - name: Save challenge state safely
+        shell: bash
         run: |
+          set -euo pipefail
+
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          # Refresh the remote branch before creating the state commit.
+          git fetch origin main
+          git rebase origin/main
+
           git add state.json
           if git diff --cached --quiet; then
             echo 'No state changes to commit.'
-          else
-            git commit -m 'chore: update daily challenge state'
-            git push
+            exit 0
           fi
+
+          git commit -m 'chore: update daily challenge state'
+
+          # A human may push while this job is running. Rebase onto the newest
+          # main and retry instead of failing with a non-fast-forward error.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo 'State pushed successfully.'
+              exit 0
+            fi
+
+            echo "Push attempt ${attempt} failed; refreshing origin/main..."
+            git fetch origin main
+            git rebase origin/main
+          done
+
+          echo 'Could not push state after 3 attempts.'
+          exit 1

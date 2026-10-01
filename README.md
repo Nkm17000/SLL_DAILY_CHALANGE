@@ -196,12 +196,22 @@ python app.py --index 1 --count 10
 
 The generated image is 1600x2000 PNG by default and is suitable for social posting.
 
+## GitHub Actions triggers
 
-## Visual themes
+The workflow intentionally **does not run on git push**. This prevents an empty commit or the workflow's own `state.json` commit from creating another social-media post.
 
-The image renderer follows the uploaded Smart Learning Lab Daily Challenge design language: a strong branded header, oversized timed challenge banner, question card, 2x2 answer cards, stats strip, CTA bar, and learning-themed footer illustrations.
+It runs only:
 
-`themes.json` contains 10 complete visual themes. The theme is selected automatically from the challenge number, so consecutive posts use different color systems and the sequence repeats after theme 10.
+- **Manual:** GitHub → Actions → Smart Learning Lab Daily Challenge → Run workflow
+- **Scheduled:** 09:00 IST and 19:00 IST every day
 
-No code change is needed to switch themes. Edit `themes.json` only if you want to change colors or add another theme.
+The workflow has a concurrency lock and rebases before pushing `state.json`, with retries for non-fast-forward errors.
 
+### Empty commit without publishing
+
+An empty commit can safely be pushed when you only want to update Git history or test a repository push. It will **not** start the Daily Challenge workflow:
+
+```bash
+git commit --allow-empty -m "chore: empty commit"
+git push origin main
+```
