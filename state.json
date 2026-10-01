@@ -1,5 +1,8 @@
 {
-  "next_index": 2,
+  "next_index": {
+    "daily_challenge": 2,
+    "logic_puzzle": 2
+  },
   "history": [
     {
       "index": 1,
@@ -19,6 +22,22 @@
         "instagram_public_image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/831142398_122121944451419769_8523175320816892801_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=054031&_nc_ohc=GxNOCc0W_XEQ7kNvwEedoHL&_nc_oc=Adqn0t837U5rlQBYgZuZJEJzQsW1zHJaJAz2wsWh3ZIP4MkvVcKNWBQG12q1uvBg7V8&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=AMAeTUEEAAAA&_nc_gid=0xW-XHIBm1oO6heZKoImTw&_nc_tpa=Q5bMBQImxGzzJYVK-iG8iMh84ipDCdKiygaR6d0GQUQ_RClXDgipjgjNV8kDlrkjFK80uoPVqci4J2aTyA&oh=00_AQOaDgqD-NLIl3z6zAiRq30QNO9M6LUyf7ZR1_mbOookng&oe=6AC3E807"
       },
       "timestamp": 1790838329
+    },
+    {
+      "timestamp": 1790843036,
+      "content_type": "logic_puzzle",
+      "index": 1,
+      "id": "sll-logic-puzzle-0001",
+      "theme": "Sunset Coral",
+      "facebook": {
+        "id": "122121958677419769",
+        "post_id": "1317018278163213_122121958695419769"
+      },
+      "instagram": {
+        "id": "18127697971831051"
+      },
+      "staged_facebook_photo_id": "122121958623419769"
     }
-  ]
+  ],
+  "theme_counter": 1
 }
