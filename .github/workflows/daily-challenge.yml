@@ -1,8 +1,14 @@
 name: Smart Learning Lab Daily Challenge
 
 on:
-  # IMPORTANT: Do not publish on git push.
-  # This keeps normal commits and empty commits from triggering a post.
+  # Publish whenever a user pushes to main.
+  # Commits made by this workflow with GITHUB_TOKEN do not recursively trigger
+  # another workflow run.
+  push:
+    branches:
+      - main
+
+  # Manual on-demand publishing.
   workflow_dispatch:
 
   # Twice every day in Asia/Kolkata:
@@ -29,6 +35,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -49,7 +56,7 @@ jobs:
           TIMEZONE: Asia/Kolkata
         run: python publish_daily.py
 
-      - name: Save challenge state safely
+      - name: Commit and push challenge state safely
         shell: bash
         run: |
           set -euo pipefail
@@ -57,9 +64,20 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
-          # Refresh the remote branch before creating the state commit.
-          git fetch origin main
-          git rebase origin/main
+          # publish_daily.py updates state.json. Keep that generated state in a
+          # temporary location while we refresh the local branch from GitHub.
+          if [ ! -f state.json ]; then
+            echo 'state.json was not created; nothing to commit.'
+            exit 0
+          fi
+
+          cp state.json /tmp/sll_daily_challenge_state.json
+
+          # Rebuild the working tree from the latest remote main. This avoids
+          # non-fast-forward failures when someone pushed while the workflow ran.
+          git fetch --prune origin main
+          git reset --hard origin/main
+          cp /tmp/sll_daily_challenge_state.json state.json
 
           git add state.json
           if git diff --cached --quiet; then
@@ -69,18 +87,27 @@ jobs:
 
           git commit -m 'chore: update daily challenge state'
 
-          # A human may push while this job is running. Rebase onto the newest
-          # main and retry instead of failing with a non-fast-forward error.
-          for attempt in 1 2 3; do
+          # Retry in case another push lands between fetch/reset and push.
+          for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then
-              echo 'State pushed successfully.'
+              echo "State pushed successfully on attempt ${attempt}."
               exit 0
             fi
 
             echo "Push attempt ${attempt} failed; refreshing origin/main..."
-            git fetch origin main
-            git rebase origin/main
+            cp state.json /tmp/sll_daily_challenge_state.json
+            git fetch --prune origin main
+            git reset --hard origin/main
+            cp /tmp/sll_daily_challenge_state.json state.json
+            git add state.json
+
+            if git diff --cached --quiet; then
+              echo 'Remote already contains the latest state.'
+              exit 0
+            fi
+
+            git commit -m 'chore: update daily challenge state'
           done
 
-          echo 'Could not push state after 3 attempts.'
+          echo 'Could not push state after 5 attempts.'
           exit 1

@@ -117,13 +117,14 @@ The project includes:
 .github/workflows/daily-challenge.yml
 ```
 
-It publishes the next Daily Challenge to **both Facebook and Instagram** in three ways:
+It publishes the next Daily Challenge to **both Facebook and Instagram** in two ways:
 
-1. **Push** — every repository push runs the workflow (except the workflow's own state-only commit).
-2. **Manual** — open GitHub → Actions → Smart Learning Lab Daily Challenge → Run workflow.
-3. **Schedule** — automatically runs twice every day:
+1. **Manual** — open GitHub → Actions → Smart Learning Lab Daily Challenge → Run workflow.
+2. **Schedule** — automatically runs twice every day:
    - 09:00 IST (03:30 UTC)
    - 19:00 IST (13:30 UTC)
+
+A normal Git push, including an empty commit, **does not publish a challenge**.
 
 ### GitHub repository secrets
 
@@ -139,28 +140,43 @@ INSTAGRAM_ACCESS_TOKEN
 
 `TIMEZONE` is already set to `Asia/Kolkata` in the workflow.
 
-### Important: Actions permission
+### Actions permission
 
-The workflow needs repository write permission because it saves `state.json` after a successful post. This ensures the next run uses the next challenge rather than starting from challenge #1 again.
+The workflow uses:
 
-The workflow's own `state.json` commit is excluded from publishing by the workflow condition, preventing an infinite push → publish → push loop.
+```yaml
+permissions:
+  contents: write
+```
+
+The repository must allow GitHub Actions to write to repository contents. In GitHub, check **Settings → Actions → General → Workflow permissions** and allow **Read and write permissions**.
+
+After a successful post, the workflow saves `state.json` so the next run uses the next challenge. The state commit is performed only inside the manual/scheduled workflow; it does not trigger another workflow because there is no `push` trigger.
+
+### Safe state push
+
+The workflow fetches the latest `main`, preserves the newly generated `state.json`, resets the local checkout to the current remote `main`, commits the state, and retries the push up to five times. This prevents the common:
+
+```text
+! [rejected] main -> main (non-fast-forward)
+```
+
+error when the remote branch changes while a workflow is running.
 
 ### Result
 
 ```text
-Push to GitHub
-      ↓
-GitHub Actions
-      ↓
-Generate next challenge
-      ↓
-Facebook Page + Instagram
-      ↓
-Update state.json
-      ↓
-Commit state only
-      ↓
-No second publishing run
+Manual Run OR scheduled run
+          ↓
+   Generate next challenge
+          ↓
+ Facebook + Instagram
+          ↓
+    Update state.json
+          ↓
+    Commit state.json
+          ↓
+       Push main
 ```
 
 ## Visual theme system
@@ -215,3 +231,14 @@ An empty commit can safely be pushed when you only want to update Git history or
 git commit --allow-empty -m "chore: empty commit"
 git push origin main
 ```
+
+
+## GitHub Actions triggers
+
+The workflow `.github/workflows/daily-challenge.yml` publishes to Facebook and Instagram in three cases:
+
+- **Push to `main`** — publishes the next challenge.
+- **Manual Run** — use GitHub Actions → Run workflow.
+- **Schedule** — runs twice daily at 09:00 and 19:00 Asia/Kolkata.
+
+The workflow commits the updated `state.json` back to `main`. That commit uses `GITHUB_TOKEN`; GitHub does not recursively start another workflow from that token push, preventing a publish loop.
