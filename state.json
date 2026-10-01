@@ -10,7 +10,8 @@
     "weekly_mission": 2,
     "science_challenge": 2,
     "cyber_safety": 2,
-    "learn_60_seconds": 2
+    "learn_60_seconds": 2,
+    "weekly_result": 2
   },
   "history": [
     {
@@ -196,7 +197,22 @@
         "id": "18121819891913104"
       },
       "staged_facebook_photo_id": "122122072023419769"
+    },
+    {
+      "timestamp": 1790891779,
+      "content_type": "weekly_result",
+      "index": 1,
+      "id": "sll-weekly-result-0001",
+      "theme": "Ocean Blue",
+      "facebook": {
+        "id": "122122077483419769",
+        "post_id": "1317018278163213_122122077501419769"
+      },
+      "instagram": {
+        "id": "18017373383927183"
+      },
+      "staged_facebook_photo_id": "122122077429419769"
     }
   ],
-  "theme_counter": 11
+  "theme_counter": 12
 }
