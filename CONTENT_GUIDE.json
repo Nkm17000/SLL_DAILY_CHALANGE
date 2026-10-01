@@ -1,0 +1,14 @@
+{
+  "main_editable_file": "data/challenges.json",
+  "configuration_file": "config.json",
+  "total_posts": 3000,
+  "categories": [
+    "math",
+    "coding",
+    "pattern",
+    "ai",
+    "general_tech",
+    "cyber_basics",
+    "science"
+  ]
+}
