@@ -2,7 +2,8 @@
   "next_index": {
     "daily_challenge": 2,
     "logic_puzzle": 3,
-    "tech_tip": 2
+    "tech_tip": 2,
+    "build_it": 2
   },
   "history": [
     {
@@ -68,7 +69,22 @@
         "id": "18094893119536632"
       },
       "staged_facebook_photo_id": "122122027743419769"
+    },
+    {
+      "timestamp": 1790872552,
+      "content_type": "build_it",
+      "index": 1,
+      "id": "sll-build-it-0001",
+      "theme": "Emerald Fresh",
+      "facebook": {
+        "id": "122122037601419769",
+        "post_id": "1317018278163213_122122037619419769"
+      },
+      "instagram": {
+        "id": "17882047476624029"
+      },
+      "staged_facebook_photo_id": "122122037547419769"
     }
   ],
-  "theme_counter": 3
+  "theme_counter": 4
 }
