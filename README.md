@@ -162,3 +162,36 @@ Commit state only
       ↓
 No second publishing run
 ```
+
+## Visual theme system
+
+The image renderer now includes **10 premium visual themes** in `themes.json`:
+
+1. Midnight Electric
+2. Sunset Coral
+3. Emerald Luxe
+4. Royal Violet
+5. Ocean Breeze
+6. Lime Circuit
+7. Berry Pop
+8. Royal Blue
+9. Paper & Ink
+10. Aurora Night
+
+Themes are selected automatically using `post_number`, so consecutive posts receive different themes and the 10-theme cycle repeats after theme 10. You do not need to change code for future posts.
+
+To customize colors, edit `themes.json`. Each theme controls the background, card surfaces, text, accent colors, borders, badges, and light/dark style.
+
+### Preview locally
+
+```bash
+python app.py --index 1
+```
+
+Generate several consecutive previews:
+
+```bash
+python app.py --index 1 --count 10
+```
+
+The generated image is 1600x2000 PNG by default and is suitable for social posting.

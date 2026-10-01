@@ -20,5 +20,7 @@
     "facebook": true,
     "instagram": true,
     "image_source": "facebook_cdn_staging"
-  }
+  },
+  "themes_file": "themes.json",
+  "theme_selection": "cycle_by_challenge_index"
 }
