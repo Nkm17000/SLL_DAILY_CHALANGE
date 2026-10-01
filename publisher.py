@@ -96,23 +96,152 @@ def facebook_photo(image_path,caption):
     if not r.ok: raise RuntimeError(f'Facebook publish failed: {r.status_code} {r.text}')
     return r.json()
 
+def _meta_error(response):
+    try:
+        payload=response.json()
+        return payload.get('error') or {}
+    except ValueError:
+        return {}
+
+def _wait_instagram_image_ready(creation_id, access, timeout_seconds=600, poll_seconds=5):
+    """Wait until Meta reports that the Instagram image container is publishable."""
+    deadline=time.monotonic()+timeout_seconds
+    last_status=None
+
+    while time.monotonic() < deadline:
+        q=requests.get(
+            f'{GRAPH}/{creation_id}',
+            params={
+                'fields':'status_code,status',
+                'access_token':access
+            },
+            timeout=60
+        )
+
+        if not q.ok:
+            # A temporary status-check failure should not immediately destroy
+            # an otherwise valid container. Keep polling until the deadline.
+            print(f'Instagram status check returned {q.status_code}: {q.text[:500]}')
+            time.sleep(poll_seconds)
+            continue
+
+        data=q.json()
+        status=data.get('status_code') or data.get('status')
+        if status != last_status:
+            print(f'Instagram image processing status: {status}')
+            last_status=status
+
+        if status in ('FINISHED','PUBLISHED'):
+            return
+
+        if status in ('ERROR','EXPIRED'):
+            raise RuntimeError(
+                f'Instagram image processing failed: {q.text}'
+            )
+
+        time.sleep(poll_seconds)
+
+    raise TimeoutError(
+        f'Instagram image container {creation_id} did not become ready '
+        f'within {timeout_seconds} seconds.'
+    )
+
+def _publish_instagram_container(user_id, creation_id, access, max_attempts=8):
+    """Publish a ready container, retrying Meta's transient 'not ready' response."""
+    url=f'{GRAPH}/{user_id}/media_publish'
+    last_response=None
+
+    for attempt in range(1,max_attempts+1):
+        r=requests.post(
+            url,
+            data={
+                'creation_id':creation_id,
+                'access_token':access
+            },
+            timeout=120
+        )
+        last_response=r
+
+        if r.ok:
+            return r.json()
+
+        error=_meta_error(r)
+        try:
+            code=int(error.get('code',-1))
+        except (TypeError,ValueError):
+            code=-1
+        try:
+            subcode=int(error.get('error_subcode',-1))
+        except (TypeError,ValueError):
+            subcode=-1
+
+        # Meta can still answer 9007/2207027 for a short period even after
+        # the container status reaches FINISHED. Wait and try again.
+        if code == 9007 and subcode == 2207027 and attempt < max_attempts:
+            wait_seconds=min(15,5*attempt)
+            print(
+                f'Instagram says the media is not ready yet '
+                f'(attempt {attempt}/{max_attempts}); waiting {wait_seconds}s...'
+            )
+            time.sleep(wait_seconds)
+            continue
+
+        raise RuntimeError(
+            f'Instagram publish failed: {r.status_code} {r.text}'
+        )
+
+    raise RuntimeError(
+        f'Instagram publish failed after {max_attempts} attempts: '
+        f'{last_response.status_code} {last_response.text}'
+    )
+
 def instagram_image(public_url,caption):
-    user_id=token('INSTAGRAM_USER_ID'); access=token('INSTAGRAM_ACCESS_TOKEN')
-    r=requests.post(f'{GRAPH}/{user_id}/media',data={'image_url':public_url,'caption':caption,'access_token':access},timeout=120)
-    if not r.ok: raise RuntimeError(f'Instagram container creation failed: {r.status_code} {r.text}')
+    """
+    Publish one generated PNG to Instagram.
+
+    The image is first staged as an unpublished Facebook Page photo so Meta
+    provides a public CDN URL. Instagram then creates an image container,
+    waits for Meta to finish processing it, and retries the final publish
+    when Meta briefly returns 9007/2207027 ("Media ID is not available").
+    """
+    user_id=token('INSTAGRAM_USER_ID')
+    access=token('INSTAGRAM_ACCESS_TOKEN')
+
+    r=requests.post(
+        f'{GRAPH}/{user_id}/media',
+        data={
+            'image_url':public_url,
+            'caption':caption,
+            'access_token':access
+        },
+        timeout=120
+    )
+    if not r.ok:
+        raise RuntimeError(
+            f'Instagram container creation failed: {r.status_code} {r.text}'
+        )
+
     creation_id=r.json().get('id')
-    if not creation_id: raise RuntimeError(f'Instagram returned no creation id: {r.text}')
-    for _ in range(40):
-        q=requests.get(f'{GRAPH}/{creation_id}',params={'fields':'status_code','access_token':access},timeout=60)
-        if q.ok:
-            status=q.json().get('status_code')
-            if status in ('FINISHED','PUBLISHED'): break
-            if status=='ERROR': raise RuntimeError(f'Instagram processing failed: {q.text}')
-        time.sleep(3)
-    else: raise RuntimeError('Instagram media processing timed out.')
-    r=requests.post(f'{GRAPH}/{user_id}/media_publish',data={'creation_id':creation_id,'access_token':access},timeout=120)
-    if not r.ok: raise RuntimeError(f'Instagram publish failed: {r.status_code} {r.text}')
-    return r.json()
+    if not creation_id:
+        raise RuntimeError(f'Instagram returned no creation id: {r.text}')
+
+    print(f'Instagram image container created: {creation_id}')
+
+    # Do not call media_publish immediately. This is the key fix for
+    # Meta error 9007 / 2207027.
+    _wait_instagram_image_ready(
+        creation_id,
+        access,
+        timeout_seconds=600,
+        poll_seconds=5
+    )
+
+    return _publish_instagram_container(
+        user_id,
+        creation_id,
+        access,
+        max_attempts=8
+    )
 
 def publish(kind=None,index=None,do_facebook=True,do_instagram=True,schedule_cron=''):
     state=load_state(); kind=select_content_type(kind or 'auto', schedule_cron); index=index or next_index(state,kind)

@@ -152,3 +152,14 @@ Cyber-safety content is defensive and educational. It does not provide instructi
 The content engine supports both the new multi-content `state.json` format and the original Daily Challenge format where `next_index` was a single integer. If an existing repository still contains the old format, the publisher automatically migrates that value to `next_index.daily_challenge` instead of failing with `AttributeError: 'int' object has no attribute 'get'`.
 
 `publish_daily.py` also forwards `SCHEDULE_CRON` to the publisher so scheduled GitHub Actions runs select the exact content type associated with the scheduled slot.
+
+
+## Instagram publishing reliability
+
+Instagram image publishing now follows the same reliability pattern used by the proven Instagram uploader:
+1. Create the Instagram media container.
+2. Poll `status_code/status` until Meta reports `FINISHED`.
+3. Call `media_publish` only after processing is complete.
+4. If Meta temporarily returns OAuth error `9007` / subcode `2207027` ("Media ID is not available"), wait and retry the publish request.
+
+This prevents the common race where `media_publish` is called while Meta is still processing the image.
