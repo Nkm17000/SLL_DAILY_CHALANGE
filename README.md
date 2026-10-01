@@ -108,3 +108,57 @@ This project is standalone. It does not import or depend on the previous quiz-vi
 - Instagram publishing requires the appropriate Meta/Instagram account and API permissions.
 - The Facebook CDN staging URL is temporary and is intended for the immediate Instagram media-container workflow.
 - `META_GRAPH_VERSION` is configurable so the project can be updated when Meta changes API versions.
+
+## GitHub Actions automation
+
+The project includes:
+
+```text
+.github/workflows/daily-challenge.yml
+```
+
+It publishes the next Daily Challenge to **both Facebook and Instagram** in three ways:
+
+1. **Push** — every repository push runs the workflow (except the workflow's own state-only commit).
+2. **Manual** — open GitHub → Actions → Smart Learning Lab Daily Challenge → Run workflow.
+3. **Schedule** — automatically runs twice every day:
+   - 09:00 IST (03:30 UTC)
+   - 19:00 IST (13:30 UTC)
+
+### GitHub repository secrets
+
+Add these under **Settings → Secrets and variables → Actions → New repository secret**:
+
+```text
+META_GRAPH_VERSION
+FACEBOOK_PAGE_ID
+FACEBOOK_PAGE_ACCESS_TOKEN
+INSTAGRAM_USER_ID
+INSTAGRAM_ACCESS_TOKEN
+```
+
+`TIMEZONE` is already set to `Asia/Kolkata` in the workflow.
+
+### Important: Actions permission
+
+The workflow needs repository write permission because it saves `state.json` after a successful post. This ensures the next run uses the next challenge rather than starting from challenge #1 again.
+
+The workflow's own `state.json` commit is excluded from publishing by the workflow condition, preventing an infinite push → publish → push loop.
+
+### Result
+
+```text
+Push to GitHub
+      ↓
+GitHub Actions
+      ↓
+Generate next challenge
+      ↓
+Facebook Page + Instagram
+      ↓
+Update state.json
+      ↓
+Commit state only
+      ↓
+No second publishing run
+```

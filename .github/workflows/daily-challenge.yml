@@ -1,0 +1,65 @@
+name: Smart Learning Lab Daily Challenge
+
+on:
+  # Publish whenever code/content is pushed.
+  push:
+    paths-ignore:
+      - 'state.json'
+
+  # Publish manually from GitHub Actions -> Run workflow.
+  workflow_dispatch:
+
+  # Twice every day in Asia/Kolkata:
+  # 09:00 IST = 03:30 UTC
+  # 19:00 IST = 13:30 UTC
+  schedule:
+    - cron: '30 3 * * *'
+    - cron: '30 13 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: smart-learning-lab-daily-challenge
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Publish next challenge to Facebook and Instagram
+        env:
+          META_GRAPH_VERSION: ${{ secrets.META_GRAPH_VERSION }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          TIMEZONE: Asia/Kolkata
+        run: python publish_daily.py
+
+      - name: Save challenge state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add state.json
+          if git diff --cached --quiet; then
+            echo 'No state changes to commit.'
+          else
+            git commit -m 'chore: update daily challenge state'
+            git push
+          fi
