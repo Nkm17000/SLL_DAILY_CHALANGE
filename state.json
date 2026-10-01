@@ -8,7 +8,8 @@
     "this_or_that": 2,
     "tech_explained": 2,
     "weekly_mission": 2,
-    "science_challenge": 2
+    "science_challenge": 2,
+    "cyber_safety": 2
   },
   "history": [
     {
@@ -164,7 +165,22 @@
         "id": "18126792742892334"
       },
       "staged_facebook_photo_id": "122122064499419769"
+    },
+    {
+      "timestamp": 1790886269,
+      "content_type": "cyber_safety",
+      "index": 1,
+      "id": "sll-cyber-safety-0001",
+      "theme": "Midnight Neon",
+      "facebook": {
+        "id": "122122067871419769",
+        "post_id": "1317018278163213_122122067889419769"
+      },
+      "instagram": {
+        "id": "18039027308838696"
+      },
+      "staged_facebook_photo_id": "122122067793419769"
     }
   ],
-  "theme_counter": 9
+  "theme_counter": 10
 }
