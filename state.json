@@ -3,7 +3,8 @@
     "daily_challenge": 2,
     "logic_puzzle": 3,
     "tech_tip": 2,
-    "build_it": 2
+    "build_it": 2,
+    "ai_challenge": 2
   },
   "history": [
     {
@@ -84,7 +85,22 @@
         "id": "17882047476624029"
       },
       "staged_facebook_photo_id": "122122037547419769"
+    },
+    {
+      "timestamp": 1790874411,
+      "content_type": "ai_challenge",
+      "index": 1,
+      "id": "sll-ai-challenge-0001",
+      "theme": "Electric Indigo",
+      "facebook": {
+        "id": "122122042503419769",
+        "post_id": "1317018278163213_122122042521419769"
+      },
+      "instagram": {
+        "id": "18114637574082588"
+      },
+      "staged_facebook_photo_id": "122122042431419769"
     }
   ],
-  "theme_counter": 4
+  "theme_counter": 5
 }
