@@ -1,26 +1,16 @@
 {
   "page_name": "Smart Learning Lab",
-  "series_name": "Smart Learning Lab Daily Challenge",
-  "content_file": "data/challenges.json",
+  "series_name": "Smart Learning Lab Content Engine",
+  "content_root": "data",
+  "content_index": "content_index.json",
+  "schedule_file": "schedule.json",
   "output_dir": "output",
-  "image": {
-    "width": 1600,
-    "height": 2000,
-    "format": "PNG"
-  },
-  "schedule": {
-    "timezone": "Asia/Kolkata",
-    "posts_per_day": 1,
-    "preferred_time": "19:00"
-  },
-  "caption": {
-    "include_hashtags": true
-  },
-  "publishing": {
-    "facebook": true,
-    "instagram": true,
-    "image_source": "facebook_cdn_staging"
-  },
-  "themes_file": "themes.json",
-  "theme_selection": "cycle_by_challenge_index"
+  "image": {"width": 1600,"height": 2000,"format":"PNG"},
+  "schedule": {"timezone":"Asia/Kolkata","posts_per_day":15},
+  "caption": {"include_hashtags":true},
+  "publishing": {"facebook":true,"instagram":true,"image_source":"facebook_cdn_staging"},
+  "themes_file":"themes.json",
+  "theme_selection":"global_content_rotation",
+  "content_types":15,
+  "records_per_content_type":2000
 }

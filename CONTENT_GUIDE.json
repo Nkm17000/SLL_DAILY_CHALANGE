@@ -1,14 +1,30 @@
 {
-  "main_editable_file": "data/challenges.json",
-  "configuration_file": "config.json",
-  "total_posts": 3000,
-  "categories": [
-    "math",
-    "coding",
-    "pattern",
-    "ai",
-    "general_tech",
-    "cyber_basics",
-    "science"
-  ]
+  "version": 2,
+  "total_records": 33000,
+  "existing_daily_challenge_records": 3000,
+  "new_records": 30000,
+  "records_per_new_format": 2000,
+  "visual_system": "premium_10_theme",
+  "active_themes": 10,
+  "old_themes_active": false,
+  "formats": [
+    "daily_challenge",
+    "crack_the_code",
+    "ai_detective",
+    "predict_the_code",
+    "spot_the_mistake",
+    "logic_puzzle",
+    "tech_tip",
+    "build_it",
+    "ai_challenge",
+    "this_or_that",
+    "tech_explained",
+    "weekly_mission",
+    "science_challenge",
+    "cyber_safety",
+    "learn_60_seconds",
+    "weekly_result"
+  ],
+  "editing": "Edit the corresponding JSON file in data/. The renderer reads content dynamically by content type and index.",
+  "quality": "Content is deterministic, structured, educational, and generated with validated answer fields where applicable. Review factual claims before adding domain-specific material outside the included templates."
 }

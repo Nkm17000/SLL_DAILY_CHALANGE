@@ -1,9 +1,9 @@
-import json, subprocess, sys
-from pathlib import Path
-ROOT=Path(__file__).resolve().parent
-state=ROOT/'state.json'
-data=json.loads((ROOT/'data/challenges.json').read_text(encoding='utf-8'))
-s=json.loads(state.read_text()) if state.exists() else {'next_index':1,'history':[]}
-idx=s.get('next_index',1)
-if idx>data['total']: idx=1
-subprocess.run([sys.executable,str(ROOT/'publisher.py'),'--index',str(idx),'--both'],check=True)
+import argparse
+from publisher import publish
+
+p=argparse.ArgumentParser(description='Publish the next scheduled Smart Learning Lab content item.')
+p.add_argument('--content-type',default='auto',help='Use auto or one of the 15 content types.')
+p.add_argument('--index',type=int,help='Override the next index for the selected content type.')
+p.add_argument('--schedule-cron',default='',help='Exact GitHub schedule expression, used to keep delayed scheduled runs mapped to the intended format.')
+a=p.parse_args()
+publish(a.content_type,a.index,do_facebook=True,do_instagram=True)

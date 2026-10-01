@@ -1,4 +1,4 @@
-name: Smart Learning Lab Daily Challenge
+name: Smart Learning Lab Content Engine
 
 on:
   push:
@@ -6,23 +6,62 @@ on:
       - main
 
   workflow_dispatch:
+    inputs:
+      content_type:
+        description: 'Content type (auto selects the current schedule slot)'
+        required: false
+        default: 'auto'
+        type: choice
+        options:
+          - auto
+          - daily_challenge
+          - crack_the_code
+          - ai_detective
+          - predict_the_code
+          - spot_the_mistake
+          - logic_puzzle
+          - tech_tip
+          - build_it
+          - ai_challenge
+          - this_or_that
+          - tech_explained
+          - weekly_mission
+          - science_challenge
+          - cyber_safety
+          - learn_60_seconds
+          - weekly_result
 
-  # 09:00 IST = 03:30 UTC; 19:00 IST = 13:30 UTC
+  # 08:00 through 23:00 IST, one format per hour.
+  # IST :30 UTC conversion: 02:30 through 17:30 UTC.
   schedule:
+    - cron: '30 2 * * *'
     - cron: '30 3 * * *'
+    - cron: '30 4 * * *'
+    - cron: '30 5 * * *'
+    - cron: '30 6 * * *'
+    - cron: '30 7 * * *'
+    - cron: '30 8 * * *'
+    - cron: '30 9 * * *'
+    - cron: '30 10 * * *'
+    - cron: '30 11 * * *'
+    - cron: '30 12 * * *'
     - cron: '30 13 * * *'
+    - cron: '30 14 * * *'
+    - cron: '30 15 * * *'
+    - cron: '30 16 * * *'
+    - cron: '30 17 * * *'
 
 permissions:
   contents: write
 
 concurrency:
-  group: smart-learning-lab-daily-challenge
+  group: smart-learning-lab-content-engine
   cancel-in-progress: false
 
 jobs:
   publish:
-    # A state-only commit made by this workflow should not publish again.
-    if: "${{ github.event_name != 'push' || github.event.head_commit.message != 'chore: update daily challenge state' }}"
+    # The workflow's own state commit must not trigger another publishing run.
+    if: "${{ github.event_name != 'push' || github.event.head_commit.message != 'chore: update content state' }}"
     runs-on: ubuntu-latest
 
     steps:
@@ -37,12 +76,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
+          cache: pip
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Publish next challenge to Facebook and Instagram
+      - name: Publish selected content to Facebook and Instagram
         env:
           META_GRAPH_VERSION: ${{ secrets.META_GRAPH_VERSION }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
@@ -50,49 +89,34 @@ jobs:
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           TIMEZONE: Asia/Kolkata
-        run: python publish_daily.py
+          CONTENT_TYPE: ${{ github.event.inputs.content_type || 'auto' }}
+          SCHEDULE_CRON: ${{ github.event.schedule || '' }}
+        run: python publish_daily.py --content-type "$CONTENT_TYPE" --schedule-cron "$SCHEDULE_CRON"
 
-      - name: Commit and push challenge state safely
+      - name: Commit and push state safely
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-
-          test -f state.json || { echo 'state.json was not created; nothing to commit.'; exit 0; }
-          cp state.json /tmp/sll_daily_challenge_state.json
-
-          # Refresh from the latest main before creating the state commit.
-          git fetch --prune origin main
-          git reset --hard origin/main
-          cp /tmp/sll_daily_challenge_state.json state.json
-          git add state.json
-
-          if git diff --cached --quiet; then
-            echo 'No state changes to commit.'
-            exit 0
-          fi
-
-          git commit -m 'chore: update daily challenge state'
+          test -f state.json || { echo 'state.json missing; nothing to commit.'; exit 0; }
+          cp state.json /tmp/sll_state.json
 
           for attempt in 1 2 3 4 5; do
-            if git push origin HEAD:main; then
-              echo "State pushed successfully on attempt ${attempt}."
-              exit 0
-            fi
-
-            echo "Push attempt ${attempt} failed; refreshing origin/main..."
-            cp state.json /tmp/sll_daily_challenge_state.json
             git fetch --prune origin main
             git reset --hard origin/main
-            cp /tmp/sll_daily_challenge_state.json state.json
+            cp /tmp/sll_state.json state.json
             git add state.json
-
             if git diff --cached --quiet; then
-              echo 'Remote already contains the latest state.'
+              echo 'No state changes to commit.'
               exit 0
             fi
-            git commit -m 'chore: update daily challenge state'
+            git commit -m 'chore: update content state'
+            if git push origin HEAD:main; then
+              echo "State push succeeded on attempt ${attempt}."
+              exit 0
+            fi
+            echo "State push attempt ${attempt} failed; retrying with latest main."
           done
 
           echo 'Could not push state after 5 attempts.'

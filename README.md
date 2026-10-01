@@ -1,192 +1,54 @@
-# Smart Learning Lab – Daily Challenge
+# Smart Learning Lab — Content Engine
 
-Standalone project for generating and publishing educational Daily Challenge posts to a Facebook Page and Instagram Professional account.
+A standalone JSON-driven social content engine for Smart Learning Lab. It generates high-resolution 1600×2000 educational posts and publishes them to Facebook and Instagram.
 
 ## What is included
 
-- 3,000 editable Daily Challenge records in `data/challenges.json`
-- HD 1600×2000 PNG generation
-- Facebook Page publishing
-- Instagram image publishing
-- Manual publishing
-- Daily scheduler entry point
-- Persistent `state.json` to continue from the next challenge
-- No external object-storage dependency
+- Existing **Daily Challenge** collection: 3,000 records.
+- **15 new content formats**, 2,000 records each = 30,000 new records.
+- Total available records: **33,000**.
+- A dedicated visual layout for every format.
+- The approved premium visual direction: large hero, strong hierarchy, answer cards, CTA, decorative illustrations and high-resolution output.
+- **10 new premium themes only**. The old theme system is not used.
+- Theme rotation is global, so consecutive posts receive different visual treatments.
+- Facebook Page + Instagram publishing.
+- No Cloudflare R2 and no R2 credentials.
+- GitHub Actions: push, manual run, and 16 scheduled IST slots.
+- Per-content-type state so every JSON collection advances independently.
 
-## Image hosting
+## Content formats and schedule (Asia/Kolkata)
 
-This version does not require an external object-storage account.
+| Time | Format | Data |
+|---|---|---|
+| 08:00 | Daily Challenge | `data/challenges.json` — 3,000 |
+| 09:00 | Crack the Code | `data/crack_the_code.json` — 2,000 |
+| 10:00 | AI Detective | `data/ai_detective.json` — 2,000 |
+| 11:00 | Predict the Code | `data/predict_the_code.json` — 2,000 |
+| 12:00 | Spot the Mistake | `data/spot_the_mistake.json` — 2,000 |
+| 13:00 | Logic Puzzle | `data/logic_puzzle.json` — 2,000 |
+| 14:00 | 60-Second Tech Tip | `data/tech_tip.json` — 2,000 |
+| 15:00 | Build It | `data/build_it.json` — 2,000 |
+| 16:00 | AI Challenge | `data/ai_challenge.json` — 2,000 |
+| 17:00 | This or That | `data/this_or_that.json` — 2,000 |
+| 18:00 | Tech Explained | `data/tech_explained.json` — 2,000 |
+| 19:00 | Weekly Mission | `data/weekly_mission.json` — 2,000 |
+| 20:00 | Science Challenge | `data/science_challenge.json` — 2,000 |
+| 21:00 | Cyber Safety Challenge | `data/cyber_safety.json` — 2,000 |
+| 22:00 | Learn in 60 Seconds | `data/learn_60_seconds.json` — 2,000 |
+| 23:00 | Weekly Challenge Result | `data/weekly_result.json` — 2,000 |
 
-Instagram's image publishing flow needs a publicly reachable image URL. The project handles that by temporarily uploading the generated image as an **unpublished Facebook Page photo**, retrieving the temporary Facebook CDN image URL, and immediately using that URL to create the Instagram media container.
+The schedule is configuration-driven in `schedule.json`. Scheduled GitHub runs pass the exact cron expression to the publisher, so a delayed scheduled run still maps to the intended format.
 
-This means there are no object-storage endpoint, bucket, access-key, secret-key, or public-domain settings in this project.
+## Files to edit later
 
-## Secrets / environment variables
+- `data/*.json` — content.
+- `schedule.json` — times and format mapping.
+- `themes.json` — the 10 visual themes.
+- `config.json` — image and project settings.
 
-Only these are required for publishing:
+No Python code changes are required to add or edit normal content records.
 
-```text
-META_GRAPH_VERSION=v24.0
-FACEBOOK_PAGE_ID=
-FACEBOOK_PAGE_ACCESS_TOKEN=
-INSTAGRAM_USER_ID=
-INSTAGRAM_ACCESS_TOKEN=
-TIMEZONE=Asia/Kolkata
-```
-
-`TIMEZONE` is a setting, not a secret.
-
-## Install
-
-```bash
-python -m venv .venv
-
-# Windows
-.venv\\Scripts\\activate
-
-# macOS/Linux
-source .venv/bin/activate
-
-pip install -r requirements.txt
-```
-
-Copy `.env.example` to `.env` and provide the Meta credentials. Load the variables using your deployment platform's secret/environment-variable settings, or your preferred dotenv loader.
-
-## Generate without publishing
-
-```bash
-python app.py --index 1
-```
-
-Output is created under `output/`.
-
-## Publish to Facebook
-
-```bash
-python publisher.py --index 1 --facebook
-```
-
-## Publish to Instagram
-
-```bash
-python publisher.py --index 1 --instagram
-```
-
-Instagram publishing will first create an unpublished Facebook staging photo so the image has a temporary public CDN URL.
-
-## Publish to both
-
-```bash
-python publisher.py --index 1 --both
-```
-
-## Daily publishing
-
-```bash
-python publish_daily.py
-```
-
-The project uses `state.json` so the next scheduled run continues with the next challenge instead of repeatedly using challenge 1.
-
-## Main content file
-
-All 3,000 challenges are stored in:
-
-```text
-data/challenges.json
-```
-
-You can edit/add challenge content there without changing the publishing code.
-
-## Project independence
-
-This project is standalone. It does not import or depend on the previous quiz-video, inspiration-story, or technical-blog projects.
-
-## Notes
-
-- Keep Meta access tokens in deployment secrets/environment variables; do not commit them to Git.
-- Instagram publishing requires the appropriate Meta/Instagram account and API permissions.
-- The Facebook CDN staging URL is temporary and is intended for the immediate Instagram media-container workflow.
-- `META_GRAPH_VERSION` is configurable so the project can be updated when Meta changes API versions.
-
-## GitHub Actions automation
-
-The project includes:
-
-```text
-.github/workflows/daily-challenge.yml
-```
-
-It publishes the next Daily Challenge to **both Facebook and Instagram** through three triggers:
-
-1. **Git push to `main`** — publishes the next challenge.
-2. **Manual** — GitHub → Actions → Smart Learning Lab Daily Challenge → Run workflow.
-3. **Schedule** — automatically runs twice every day:
-   - 09:00 IST (03:30 UTC)
-   - 19:00 IST (13:30 UTC)
-
-The workflow's own state commit is intentionally detected and skipped, so this does not create an infinite publish loop. An empty commit pushed to `main` is also a normal push event and will trigger a publishing run.
-
-### GitHub repository secrets
-
-Add these under **Settings → Secrets and variables → Actions → New repository secret**:
-
-```text
-META_GRAPH_VERSION
-FACEBOOK_PAGE_ID
-FACEBOOK_PAGE_ACCESS_TOKEN
-INSTAGRAM_USER_ID
-INSTAGRAM_ACCESS_TOKEN
-```
-
-`TIMEZONE` is already set to `Asia/Kolkata` in the workflow.
-
-### Actions permission
-
-The workflow uses:
-
-```yaml
-permissions:
-  contents: write
-```
-
-The repository must allow GitHub Actions to write to repository contents. In GitHub, check **Settings → Actions → General → Workflow permissions** and allow **Read and write permissions**.
-
-### Safe state push
-
-After publishing, the workflow saves `state.json`. It fetches the latest `main`, reapplies the generated state, commits it, and retries the push up to five times if another remote change causes a non-fast-forward error.
-
-The state commit message is:
-
-```text
-chore: update daily challenge state
-```
-
-A push containing only that workflow-generated state commit starts a workflow run but the publish job is skipped, preventing duplicate social posts.
-
-### Result
-
-```text
-Push / Manual Run / Schedule
-          ↓
-   Generate next challenge
-          ↓
- Facebook + Instagram
-          ↓
-    Update state.json
-          ↓
-    Commit state.json
-          ↓
-       Push main
-          ↓
-   State-only run skipped
-```
-
-## Premium visual theme system
-
-The renderer uses **only the new premium 15 Second Challenge design** based on the approved reference layout. The previous simple-card theme system has been removed.
-
-There are exactly **10 new themes** in `themes.json`:
+## 10 premium themes
 
 1. Sunset Coral
 2. Ocean Blue
@@ -199,43 +61,88 @@ There are exactly **10 new themes** in `themes.json`:
 9. Gold Navy
 10. Midnight Neon
 
-Every theme keeps the same approved premium UX structure while changing the color palette, accents, background shapes, and supporting visual treatment.
+The old theme definitions/layouts have been removed from the active renderer.
 
-The layout includes:
+## Local generation
 
-- Smart Learning Lab branded header
-- Large **15 SECOND CHALLENGE** hero
-- Stopwatch illustration
-- Daily Challenge number
-- Category badge
-- Large question card
-- 2×2 answer cards
-- Time-limit and difficulty panel
-- Comment / Tag / Share CTA
-- Calculator illustration
-- Lightbulb and π accents
-- “Small Questions • Big Progress” footer
-- High-resolution 1600×2000 PNG output
+Install:
 
-Themes are selected automatically from `post_number`, so posts cycle through all 10 themes and then restart at theme 1. You do not need to select a theme manually.
+```bash
+pip install -r requirements.txt
+```
 
-To customize the 10 palettes, edit only:
+Generate one item:
+
+```bash
+python app.py --content-type crack_the_code --index 1
+```
+
+Generate an existing Daily Challenge:
+
+```bash
+python app.py --content-type daily_challenge --index 1
+```
+
+Generate a selected theme explicitly:
+
+```bash
+python app.py --content-type ai_detective --index 1 --theme 4
+```
+
+## Publishing
+
+Publish the next item for the current schedule slot:
+
+```bash
+python publish_daily.py
+```
+
+Publish a specific format:
+
+```bash
+python publish_daily.py --content-type predict_the_code
+```
+
+The publisher updates `state.json`, maintaining a separate next index for every content type.
+
+## Required GitHub Secrets
 
 ```text
-themes.json
+META_GRAPH_VERSION
+FACEBOOK_PAGE_ID
+FACEBOOK_PAGE_ACCESS_TOKEN
+INSTAGRAM_USER_ID
+INSTAGRAM_ACCESS_TOKEN
 ```
 
-### Preview locally
+`TIMEZONE=Asia/Kolkata` is configured by the workflow.
 
-```bash
-python app.py --index 1
-```
-
-Generate all 10 theme previews:
-
-```bash
-python app.py --index 1 --count 10
-```
+There are **no R2 secrets**.
 
 ## GitHub Actions
-The workflow runs on push to `main`, manual `workflow_dispatch`, and twice daily at 09:00 and 19:00 IST. Its own state-only commit is skipped to prevent a publish loop.
+
+The workflow runs on:
+
+1. `git push` to `main`.
+2. Manual **Run workflow**.
+3. 16 scheduled runs from 08:00 to 23:00 IST.
+
+For a manual run, choose `content_type` or leave it as `auto` to select the current schedule slot.
+
+The workflow commits the updated `state.json` back to `main`. Its own state commit uses:
+
+```text
+chore: update content state
+```
+
+and is explicitly excluded from the push trigger, preventing an infinite publish loop.
+
+The state push refreshes `origin/main` and retries up to five times to handle concurrent repository changes.
+
+## Instagram image hosting
+
+For Instagram image publishing, the project stages the image as an unpublished Facebook Page photo and uses the returned Meta CDN image URL for the Instagram media container. This removes the Cloudflare R2 dependency.
+
+## Safety/content notes
+
+Cyber-safety content is defensive and educational. It does not provide instructions for harmful activity. AI content asks users to verify important claims and treat generated output as a draft.

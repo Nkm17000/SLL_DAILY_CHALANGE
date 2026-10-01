@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "total_content_types": 16,
+  "records_per_type": 2000,
+  "total_records": 33000,
+  "content": {
+    "crack_the_code": {
+      "label": "Crack the Code",
+      "time_ist": "09:00",
+      "file": "data/crack_the_code.json",
+      "total": 2000
+    },
+    "ai_detective": {
+      "label": "AI Detective",
+      "time_ist": "10:00",
+      "file": "data/ai_detective.json",
+      "total": 2000
+    },
+    "predict_the_code": {
+      "label": "Predict the Code",
+      "time_ist": "11:00",
+      "file": "data/predict_the_code.json",
+      "total": 2000
+    },
+    "spot_the_mistake": {
+      "label": "Spot the Mistake",
+      "time_ist": "12:00",
+      "file": "data/spot_the_mistake.json",
+      "total": 2000
+    },
+    "logic_puzzle": {
+      "label": "Logic Puzzle",
+      "time_ist": "13:00",
+      "file": "data/logic_puzzle.json",
+      "total": 2000
+    },
+    "tech_tip": {
+      "label": "60-Second Tech Tip",
+      "time_ist": "14:00",
+      "file": "data/tech_tip.json",
+      "total": 2000
+    },
+    "build_it": {
+      "label": "Build It",
+      "time_ist": "15:00",
+      "file": "data/build_it.json",
+      "total": 2000
+    },
+    "ai_challenge": {
+      "label": "AI Challenge",
+      "time_ist": "16:00",
+      "file": "data/ai_challenge.json",
+      "total": 2000
+    },
+    "this_or_that": {
+      "label": "This or That",
+      "time_ist": "17:00",
+      "file": "data/this_or_that.json",
+      "total": 2000
+    },
+    "tech_explained": {
+      "label": "Tech Explained",
+      "time_ist": "18:00",
+      "file": "data/tech_explained.json",
+      "total": 2000
+    },
+    "weekly_mission": {
+      "label": "Weekly Mission",
+      "time_ist": "19:00",
+      "file": "data/weekly_mission.json",
+      "total": 2000
+    },
+    "science_challenge": {
+      "label": "Science Challenge",
+      "time_ist": "20:00",
+      "file": "data/science_challenge.json",
+      "total": 2000
+    },
+    "cyber_safety": {
+      "label": "Cyber Safety Challenge",
+      "time_ist": "21:00",
+      "file": "data/cyber_safety.json",
+      "total": 2000
+    },
+    "learn_60_seconds": {
+      "label": "Learn in 60 Seconds",
+      "time_ist": "22:00",
+      "file": "data/learn_60_seconds.json",
+      "total": 2000
+    },
+    "weekly_result": {
+      "label": "Weekly Challenge Result",
+      "time_ist": "23:00",
+      "file": "data/weekly_result.json",
+      "total": 2000
+    },
+    "daily_challenge": {
+      "label": "Daily Challenge",
+      "time_ist": "08:00",
+      "file": "data/challenges.json",
+      "total": 3000
+    }
+  },
+  "records_per_content_type": 2000
+}
