@@ -3,8 +3,22 @@
   "series_name": "Smart Learning Lab Daily Challenge",
   "content_file": "data/challenges.json",
   "output_dir": "output",
-  "image": {"width": 1600, "height": 2000, "format": "PNG"},
-  "schedule": {"timezone": "Asia/Kolkata", "posts_per_day": 1, "preferred_time": "19:00"},
-  "caption": {"include_hashtags": true},
-  "publishing": {"facebook": true, "instagram": true, "storage": "cloudflare_r2"}
+  "image": {
+    "width": 1600,
+    "height": 2000,
+    "format": "PNG"
+  },
+  "schedule": {
+    "timezone": "Asia/Kolkata",
+    "posts_per_day": 1,
+    "preferred_time": "19:00"
+  },
+  "caption": {
+    "include_hashtags": true
+  },
+  "publishing": {
+    "facebook": true,
+    "instagram": true,
+    "image_source": "facebook_cdn_staging"
+  }
 }

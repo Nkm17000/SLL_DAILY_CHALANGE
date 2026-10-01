@@ -1,70 +1,110 @@
-# Smart Learning Lab — Daily Challenge
+# Smart Learning Lab – Daily Challenge
 
-Standalone project for 3,000 interactive learning posts.
+Standalone project for generating and publishing educational Daily Challenge posts to a Facebook Page and Instagram Professional account.
 
-## Main content file
+## What is included
 
-`data/challenges.json` is the only file you normally need to edit. Change questions, options, answers, hints, explanations, difficulty, time limits, CTAs and hashtags.
+- 3,000 editable Daily Challenge records in `data/challenges.json`
+- HD 1600×2000 PNG generation
+- Facebook Page publishing
+- Instagram image publishing
+- Manual publishing
+- Daily scheduler entry point
+- Persistent `state.json` to continue from the next challenge
+- No external object-storage dependency
 
-## Generate only
+## Image hosting
 
-```bash
-pip install -r requirements.txt
-python app.py --index 1
-python app.py --index 250
-python app.py --index 1 --count 10
+This version does not require an external object-storage account.
+
+Instagram's image publishing flow needs a publicly reachable image URL. The project handles that by temporarily uploading the generated image as an **unpublished Facebook Page photo**, retrieving the temporary Facebook CDN image URL, and immediately using that URL to create the Instagram media container.
+
+This means there are no object-storage endpoint, bucket, access-key, secret-key, or public-domain settings in this project.
+
+## Secrets / environment variables
+
+Only these are required for publishing:
+
+```text
+META_GRAPH_VERSION=v24.0
+FACEBOOK_PAGE_ID=
+FACEBOOK_PAGE_ACCESS_TOKEN=
+INSTAGRAM_USER_ID=
+INSTAGRAM_ACCESS_TOKEN=
+TIMEZONE=Asia/Kolkata
 ```
 
-## Publish
+`TIMEZONE` is a setting, not a secret.
 
-Copy `.env.example` to `.env` or configure the same variables in your hosting platform's Secrets/Environment Variables.
+## Install
 
-Generate + Facebook:
+```bash
+python -m venv .venv
+
+# Windows
+.venv\\Scripts\\activate
+
+# macOS/Linux
+source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+Copy `.env.example` to `.env` and provide the Meta credentials. Load the variables using your deployment platform's secret/environment-variable settings, or your preferred dotenv loader.
+
+## Generate without publishing
+
+```bash
+python app.py --index 1
+```
+
+Output is created under `output/`.
+
+## Publish to Facebook
 
 ```bash
 python publisher.py --index 1 --facebook
 ```
 
-Generate + Instagram:
+## Publish to Instagram
 
 ```bash
 python publisher.py --index 1 --instagram
 ```
 
-Generate + both:
+Instagram publishing will first create an unpublished Facebook staging photo so the image has a temporary public CDN URL.
+
+## Publish to both
 
 ```bash
 python publisher.py --index 1 --both
 ```
 
-For Instagram, the generated PNG is uploaded to Cloudflare R2 first so Instagram can access it through a public HTTPS URL.
-
-## Daily scheduler
+## Daily publishing
 
 ```bash
 python publish_daily.py
 ```
 
-The state is stored in `state.json`. Every successful run advances to the next challenge. After #3000 it starts again at #1.
+The project uses `state.json` so the next scheduled run continues with the next challenge instead of repeatedly using challenge 1.
 
-## Secrets
+## Main content file
 
-- META_GRAPH_VERSION
-- FACEBOOK_PAGE_ID
-- FACEBOOK_PAGE_ACCESS_TOKEN
-- INSTAGRAM_USER_ID
-- INSTAGRAM_ACCESS_TOKEN
-- R2_ENDPOINT
-- R2_ACCESS_KEY_ID
-- R2_SECRET_ACCESS_KEY
-- R2_BUCKET
-- R2_PUBLIC_BASE_URL
-- TIMEZONE (optional)
+All 3,000 challenges are stored in:
 
-Never commit `.env`, access tokens, R2 secrets, or `state.json` to a public repository.
+```text
+data/challenges.json
+```
 
-## Architecture
+You can edit/add challenge content there without changing the publishing code.
 
-JSON library -> HD image generator -> R2 public image -> Facebook Page / Instagram -> state tracking.
+## Project independence
 
-This project is independent from any previous quiz-video, inspiration-story, or technical-blog project.
+This project is standalone. It does not import or depend on the previous quiz-video, inspiration-story, or technical-blog projects.
+
+## Notes
+
+- Keep Meta access tokens in deployment secrets/environment variables; do not commit them to Git.
+- Instagram publishing requires the appropriate Meta/Instagram account and API permissions.
+- The Facebook CDN staging URL is temporary and is intended for the immediate Instagram media-container workflow.
+- `META_GRAPH_VERSION` is configurable so the project can be updated when Meta changes API versions.
