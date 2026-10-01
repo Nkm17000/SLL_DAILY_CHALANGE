@@ -4,7 +4,8 @@
     "logic_puzzle": 3,
     "tech_tip": 2,
     "build_it": 2,
-    "ai_challenge": 2
+    "ai_challenge": 2,
+    "this_or_that": 2
   },
   "history": [
     {
@@ -100,7 +101,22 @@
         "id": "18114637574082588"
       },
       "staged_facebook_photo_id": "122122042431419769"
+    },
+    {
+      "timestamp": 1790875605,
+      "content_type": "this_or_that",
+      "index": 1,
+      "id": "sll-this-or-that-0001",
+      "theme": "Mango Sun",
+      "facebook": {
+        "id": "122122046661419769",
+        "post_id": "1317018278163213_122122046685419769"
+      },
+      "instagram": {
+        "id": "18376458805235502"
+      },
+      "staged_facebook_photo_id": "122122046613419769"
     }
   ],
-  "theme_counter": 5
+  "theme_counter": 6
 }
