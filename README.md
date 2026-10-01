@@ -195,3 +195,13 @@ python app.py --index 1 --count 10
 ```
 
 The generated image is 1600x2000 PNG by default and is suitable for social posting.
+
+
+## Visual themes
+
+The image renderer follows the uploaded Smart Learning Lab Daily Challenge design language: a strong branded header, oversized timed challenge banner, question card, 2x2 answer cards, stats strip, CTA bar, and learning-themed footer illustrations.
+
+`themes.json` contains 10 complete visual themes. The theme is selected automatically from the challenge number, so consecutive posts use different color systems and the sequence repeats after theme 10.
+
+No code change is needed to switch themes. Edit `themes.json` only if you want to change colors or add another theme.
+
