@@ -1,7 +1,7 @@
 {
   "next_index": {
     "daily_challenge": 2,
-    "logic_puzzle": 2
+    "logic_puzzle": 3
   },
   "history": [
     {
@@ -37,7 +37,22 @@
         "id": "18127697971831051"
       },
       "staged_facebook_photo_id": "122121958623419769"
+    },
+    {
+      "timestamp": 1790865694,
+      "content_type": "logic_puzzle",
+      "index": 2,
+      "id": "sll-logic-puzzle-0002",
+      "theme": "Ocean Blue",
+      "facebook": {
+        "id": "122122018995419769",
+        "post_id": "1317018278163213_122122019031419769"
+      },
+      "instagram": {
+        "id": "18131369266704768"
+      },
+      "staged_facebook_photo_id": "122122018911419769"
     }
   ],
-  "theme_counter": 1
+  "theme_counter": 2
 }
