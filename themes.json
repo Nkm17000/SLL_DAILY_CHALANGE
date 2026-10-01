@@ -1,17 +1,17 @@
 {
-  "version": 1,
+  "version": 2,
   "selection": "cycle_by_challenge_index",
-  "description": "Ten editable visual themes. The renderer selects a different theme for each consecutive challenge and cycles back after theme 10.",
+  "description": "Only the 10 premium Daily Challenge themes are used. The layout stays consistent with the approved 15 Second Challenge design while colors and decorative accents change.",
   "themes": [
-    {"id":"midnight-electric","name":"Midnight Electric","background":"#070B17","surface":"#10182F","surface2":"#172342","text":"#F8FAFF","muted":"#B8C4E6","accent":"#6C7CFF","accent2":"#A855F7","option":"#151F3B","border":"#5265FF","badge":"#18264C","style":"dark"},
-    {"id":"sunset-coral","name":"Sunset Coral","background":"#FFF5F1","surface":"#FFFFFF","surface2":"#FFF0EA","text":"#231B1A","muted":"#725F5A","accent":"#FF5C5C","accent2":"#FF9F43","option":"#FFF2ED","border":"#FF7B66","badge":"#FFE3DA","style":"light"},
-    {"id":"emerald-luxe","name":"Emerald Luxe","background":"#061713","surface":"#0D2821","surface2":"#12352C","text":"#F2FFFA","muted":"#B5D8CB","accent":"#22C55E","accent2":"#14B8A6","option":"#103128","border":"#2DD4BF","badge":"#12382E","style":"dark"},
-    {"id":"royal-violet","name":"Royal Violet","background":"#10091C","surface":"#201332","surface2":"#2B1944","text":"#FCF8FF","muted":"#D2C2E5","accent":"#B56CFF","accent2":"#F472B6","option":"#2A1A42","border":"#C084FC","badge":"#351C52","style":"dark"},
-    {"id":"ocean-breeze","name":"Ocean Breeze","background":"#EFFBFF","surface":"#FFFFFF","surface2":"#E6F7FC","text":"#10232C","muted":"#5D7480","accent":"#0891B2","accent2":"#2563EB","option":"#EAF8FC","border":"#22B8D6","badge":"#D9F3FA","style":"light"},
-    {"id":"lime-circuit","name":"Lime Circuit","background":"#0A1008","surface":"#111B0E","surface2":"#192514","text":"#F5FFE9","muted":"#C2D0B8","accent":"#A3E635","accent2":"#FACC15","option":"#172214","border":"#A3E635","badge":"#233116","style":"dark"},
-    {"id":"berry-pop","name":"Berry Pop","background":"#FFF3FA","surface":"#FFFFFF","surface2":"#FCE7F3","text":"#2A1321","muted":"#79566B","accent":"#DB2777","accent2":"#7C3AED","option":"#FDEAF4","border":"#EC4899","badge":"#FCE1EF","style":"light"},
-    {"id":"royal-blue","name":"Royal Blue","background":"#071326","surface":"#0D1F3B","surface2":"#142A4D","text":"#F7FBFF","muted":"#B9C9E2","accent":"#38BDF8","accent2":"#6366F1","option":"#122747","border":"#38BDF8","badge":"#153354","style":"dark"},
-    {"id":"paper-ink","name":"Paper & Ink","background":"#F5F1E8","surface":"#FFFDF7","surface2":"#F0EADD","text":"#1D1B18","muted":"#6E665B","accent":"#C2410C","accent2":"#0F766E","option":"#F4EFE5","border":"#C96A3A","badge":"#F3E4D8","style":"light"},
-    {"id":"aurora","name":"Aurora Night","background":"#07111A","surface":"#0D1D28","surface2":"#122A31","text":"#F3FFFC","muted":"#B8D4D0","accent":"#2DD4BF","accent2":"#60A5FA","option":"#10262F","border":"#34D399","badge":"#12352F","style":"dark"}
+    {"id":"sunset-coral","name":"Sunset Coral","background":"#FFF3EA","surface":"#FFFDFB","surface2":"#FFE7DD","text":"#122033","muted":"#655B5A","accent":"#FF4D4D","accent2":"#FFB13B","dark":"#152235","soft":"#FFE1D7","border":"#FF806D"},
+    {"id":"ocean-blue","name":"Ocean Blue","background":"#EAF8FF","surface":"#FFFFFF","surface2":"#DDF4FF","text":"#10243A","muted":"#587083","accent":"#168BFF","accent2":"#22C7D8","dark":"#102B4A","soft":"#D7F1FF","border":"#57B8FF"},
+    {"id":"royal-violet","name":"Royal Violet","background":"#F5EDFF","surface":"#FFFFFF","surface2":"#E9D8FF","text":"#201333","muted":"#6B5B78","accent":"#8B45FF","accent2":"#D946EF","dark":"#28153D","soft":"#EEDFFF","border":"#AE78FF"},
+    {"id":"emerald-fresh","name":"Emerald Fresh","background":"#ECFFF5","surface":"#FFFFFF","surface2":"#D8F9E8","text":"#102B22","muted":"#5D756B","accent":"#00A86B","accent2":"#65D46E","dark":"#12382C","soft":"#D8F6E8","border":"#58CFA1"},
+    {"id":"electric-indigo","name":"Electric Indigo","background":"#EEF0FF","surface":"#FFFFFF","surface2":"#DDE2FF","text":"#151A3A","muted":"#60698C","accent":"#4F46E5","accent2":"#06B6D4","dark":"#151B45","soft":"#DEE3FF","border":"#7778FF"},
+    {"id":"mango-sun","name":"Mango Sun","background":"#FFF8E8","surface":"#FFFFFF","surface2":"#FFE9B8","text":"#2C2111","muted":"#75634A","accent":"#FF7A00","accent2":"#FFC928","dark":"#3B260B","soft":"#FFECC7","border":"#FFAE38"},
+    {"id":"berry-pink","name":"Berry Pink","background":"#FFF0F7","surface":"#FFFFFF","surface2":"#FFDCEC","text":"#321325","muted":"#795A6A","accent":"#E83E8C","accent2":"#9B51E0","dark":"#3C1730","soft":"#FFE0EF","border":"#F178AD"},
+    {"id":"teal-mint","name":"Teal Mint","background":"#E9FFFC","surface":"#FFFFFF","surface2":"#D2F8F2","text":"#0E292A","muted":"#567274","accent":"#009E9A","accent2":"#00C389","dark":"#103B3C","soft":"#D5F5EF","border":"#55CFC4"},
+    {"id":"gold-navy","name":"Gold Navy","background":"#F6F2E8","surface":"#FFFDF7","surface2":"#ECE5D2","text":"#142238","muted":"#667083","accent":"#D69A00","accent2":"#F1C75B","dark":"#13233D","soft":"#F2E8C9","border":"#D7B24B"},
+    {"id":"midnight-neon","name":"Midnight Neon","background":"#0A1020","surface":"#111A31","surface2":"#172342","text":"#F7FAFF","muted":"#B9C6E2","accent":"#62E6FF","accent2":"#A855F7","dark":"#0B1327","soft":"#1A2B4C","border":"#6D7CFF"}
   ]
 }

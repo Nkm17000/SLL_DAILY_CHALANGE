@@ -117,14 +117,15 @@ The project includes:
 .github/workflows/daily-challenge.yml
 ```
 
-It publishes the next Daily Challenge to **both Facebook and Instagram** in two ways:
+It publishes the next Daily Challenge to **both Facebook and Instagram** through three triggers:
 
-1. **Manual** — open GitHub → Actions → Smart Learning Lab Daily Challenge → Run workflow.
-2. **Schedule** — automatically runs twice every day:
+1. **Git push to `main`** — publishes the next challenge.
+2. **Manual** — GitHub → Actions → Smart Learning Lab Daily Challenge → Run workflow.
+3. **Schedule** — automatically runs twice every day:
    - 09:00 IST (03:30 UTC)
    - 19:00 IST (13:30 UTC)
 
-A normal Git push, including an empty commit, **does not publish a challenge**.
+The workflow's own state commit is intentionally detected and skipped, so this does not create an infinite publish loop. An empty commit pushed to `main` is also a normal push event and will trigger a publishing run.
 
 ### GitHub repository secrets
 
@@ -151,22 +152,22 @@ permissions:
 
 The repository must allow GitHub Actions to write to repository contents. In GitHub, check **Settings → Actions → General → Workflow permissions** and allow **Read and write permissions**.
 
-After a successful post, the workflow saves `state.json` so the next run uses the next challenge. The state commit is performed only inside the manual/scheduled workflow; it does not trigger another workflow because there is no `push` trigger.
-
 ### Safe state push
 
-The workflow fetches the latest `main`, preserves the newly generated `state.json`, resets the local checkout to the current remote `main`, commits the state, and retries the push up to five times. This prevents the common:
+After publishing, the workflow saves `state.json`. It fetches the latest `main`, reapplies the generated state, commits it, and retries the push up to five times if another remote change causes a non-fast-forward error.
+
+The state commit message is:
 
 ```text
-! [rejected] main -> main (non-fast-forward)
+chore: update daily challenge state
 ```
 
-error when the remote branch changes while a workflow is running.
+A push containing only that workflow-generated state commit starts a workflow run but the publish job is skipped, preventing duplicate social posts.
 
 ### Result
 
 ```text
-Manual Run OR scheduled run
+Push / Manual Run / Schedule
           ↓
    Generate next challenge
           ↓
@@ -177,26 +178,52 @@ Manual Run OR scheduled run
     Commit state.json
           ↓
        Push main
+          ↓
+   State-only run skipped
 ```
 
-## Visual theme system
+## Premium visual theme system
 
-The image renderer now includes **10 premium visual themes** in `themes.json`:
+The renderer uses **only the new premium 15 Second Challenge design** based on the approved reference layout. The previous simple-card theme system has been removed.
 
-1. Midnight Electric
-2. Sunset Coral
-3. Emerald Luxe
-4. Royal Violet
-5. Ocean Breeze
-6. Lime Circuit
-7. Berry Pop
-8. Royal Blue
-9. Paper & Ink
-10. Aurora Night
+There are exactly **10 new themes** in `themes.json`:
 
-Themes are selected automatically using `post_number`, so consecutive posts receive different themes and the 10-theme cycle repeats after theme 10. You do not need to change code for future posts.
+1. Sunset Coral
+2. Ocean Blue
+3. Royal Violet
+4. Emerald Fresh
+5. Electric Indigo
+6. Mango Sun
+7. Berry Pink
+8. Teal Mint
+9. Gold Navy
+10. Midnight Neon
 
-To customize colors, edit `themes.json`. Each theme controls the background, card surfaces, text, accent colors, borders, badges, and light/dark style.
+Every theme keeps the same approved premium UX structure while changing the color palette, accents, background shapes, and supporting visual treatment.
+
+The layout includes:
+
+- Smart Learning Lab branded header
+- Large **15 SECOND CHALLENGE** hero
+- Stopwatch illustration
+- Daily Challenge number
+- Category badge
+- Large question card
+- 2×2 answer cards
+- Time-limit and difficulty panel
+- Comment / Tag / Share CTA
+- Calculator illustration
+- Lightbulb and π accents
+- “Small Questions • Big Progress” footer
+- High-resolution 1600×2000 PNG output
+
+Themes are selected automatically from `post_number`, so posts cycle through all 10 themes and then restart at theme 1. You do not need to select a theme manually.
+
+To customize the 10 palettes, edit only:
+
+```text
+themes.json
+```
 
 ### Preview locally
 
@@ -204,41 +231,8 @@ To customize colors, edit `themes.json`. Each theme controls the background, car
 python app.py --index 1
 ```
 
-Generate several consecutive previews:
+Generate all 10 theme previews:
 
 ```bash
 python app.py --index 1 --count 10
 ```
-
-The generated image is 1600x2000 PNG by default and is suitable for social posting.
-
-## GitHub Actions triggers
-
-The workflow intentionally **does not run on git push**. This prevents an empty commit or the workflow's own `state.json` commit from creating another social-media post.
-
-It runs only:
-
-- **Manual:** GitHub → Actions → Smart Learning Lab Daily Challenge → Run workflow
-- **Scheduled:** 09:00 IST and 19:00 IST every day
-
-The workflow has a concurrency lock and rebases before pushing `state.json`, with retries for non-fast-forward errors.
-
-### Empty commit without publishing
-
-An empty commit can safely be pushed when you only want to update Git history or test a repository push. It will **not** start the Daily Challenge workflow:
-
-```bash
-git commit --allow-empty -m "chore: empty commit"
-git push origin main
-```
-
-
-## GitHub Actions triggers
-
-The workflow `.github/workflows/daily-challenge.yml` publishes to Facebook and Instagram in three cases:
-
-- **Push to `main`** — publishes the next challenge.
-- **Manual Run** — use GitHub Actions → Run workflow.
-- **Schedule** — runs twice daily at 09:00 and 19:00 Asia/Kolkata.
-
-The workflow commits the updated `state.json` back to `main`. That commit uses `GITHUB_TOKEN`; GitHub does not recursively start another workflow from that token push, preventing a publish loop.
