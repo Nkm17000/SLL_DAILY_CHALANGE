@@ -1,7 +1,8 @@
 {
   "next_index": {
     "daily_challenge": 2,
-    "logic_puzzle": 3
+    "logic_puzzle": 3,
+    "tech_tip": 2
   },
   "history": [
     {
@@ -52,7 +53,22 @@
         "id": "18131369266704768"
       },
       "staged_facebook_photo_id": "122122018911419769"
+    },
+    {
+      "timestamp": 1790868901,
+      "content_type": "tech_tip",
+      "index": 1,
+      "id": "sll-tech-tip-0001",
+      "theme": "Royal Violet",
+      "facebook": {
+        "id": "122122027785419769",
+        "post_id": "1317018278163213_122122027803419769"
+      },
+      "instagram": {
+        "id": "18094893119536632"
+      },
+      "staged_facebook_photo_id": "122122027743419769"
     }
   ],
-  "theme_counter": 2
+  "theme_counter": 3
 }
