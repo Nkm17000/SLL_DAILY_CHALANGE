@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       content_type:
-        description: 'Content type (auto selects the current schedule slot)'
+        description: 'Content type (auto follows the active 8-format day rotation)'
         required: false
         default: 'auto'
         type: choice
@@ -31,8 +31,9 @@ on:
           - learn_60_seconds
           - weekly_result
 
-  # 08:00 through 23:00 IST, one format per hour.
-  # IST :30 UTC conversion: 02:30 through 17:30 UTC.
+  # Exactly 8 scheduled runs per day.
+  # Day 1 uses formats 1-8; day 2 uses formats 9-16; day 3 starts 1-8 again.
+  # 08:00-15:00 IST = 02:30-09:30 UTC.
   schedule:
     - cron: '30 2 * * *'
     - cron: '30 3 * * *'
@@ -42,14 +43,6 @@ on:
     - cron: '30 7 * * *'
     - cron: '30 8 * * *'
     - cron: '30 9 * * *'
-    - cron: '30 10 * * *'
-    - cron: '30 11 * * *'
-    - cron: '30 12 * * *'
-    - cron: '30 13 * * *'
-    - cron: '30 14 * * *'
-    - cron: '30 15 * * *'
-    - cron: '30 16 * * *'
-    - cron: '30 17 * * *'
 
 permissions:
   contents: write
@@ -60,7 +53,6 @@ concurrency:
 
 jobs:
   publish:
-    # The workflow's own state commit must not trigger another publishing run.
     if: "${{ github.event_name != 'push' || github.event.head_commit.message != 'chore: update content state' }}"
     runs-on: ubuntu-latest
 

@@ -1,54 +1,72 @@
-# Smart Learning Lab — Content Engine
+# Smart Learning Lab Content Engine
 
-A standalone JSON-driven social content engine for Smart Learning Lab. It generates high-resolution 1600×2000 educational posts and publishes them to Facebook and Instagram.
+A standalone JSON-driven Facebook + Instagram content publisher for Smart Learning Lab.
 
-## What is included
+## Final publishing model
 
-- Existing **Daily Challenge** collection: 3,000 records.
-- **15 new content formats**, 2,000 records each = 30,000 new records.
-- Total available records: **33,000**.
-- A dedicated visual layout for every format.
-- The approved premium visual direction: large hero, strong hierarchy, answer cards, CTA, decorative illustrations and high-resolution output.
-- **10 new premium themes only**. The old theme system is not used.
-- Theme rotation is global, so consecutive posts receive different visual treatments.
-- Facebook Page + Instagram publishing.
-- No Cloudflare R2 and no R2 credentials.
-- GitHub Actions: push, manual run, and 16 scheduled IST slots.
-- Per-content-type state so every JSON collection advances independently.
+There are **16 content formats**, but only **8 scheduled posts per day**.
 
-## Content formats and schedule (Asia/Kolkata)
+- **Day 1 / Group A:** formats 1-8
+- **Day 2 / Group B:** formats 9-16
+- **Day 3:** Group A again
+- **Day 4:** Group B again
+- The cycle repeats every 2 days.
 
-| Time | Format | Data |
-|---|---|---|
-| 08:00 | Daily Challenge | `data/challenges.json` — 3,000 |
-| 09:00 | Crack the Code | `data/crack_the_code.json` — 2,000 |
-| 10:00 | AI Detective | `data/ai_detective.json` — 2,000 |
-| 11:00 | Predict the Code | `data/predict_the_code.json` — 2,000 |
-| 12:00 | Spot the Mistake | `data/spot_the_mistake.json` — 2,000 |
-| 13:00 | Logic Puzzle | `data/logic_puzzle.json` — 2,000 |
-| 14:00 | 60-Second Tech Tip | `data/tech_tip.json` — 2,000 |
-| 15:00 | Build It | `data/build_it.json` — 2,000 |
-| 16:00 | AI Challenge | `data/ai_challenge.json` — 2,000 |
-| 17:00 | This or That | `data/this_or_that.json` — 2,000 |
-| 18:00 | Tech Explained | `data/tech_explained.json` — 2,000 |
-| 19:00 | Weekly Mission | `data/weekly_mission.json` — 2,000 |
-| 20:00 | Science Challenge | `data/science_challenge.json` — 2,000 |
-| 21:00 | Cyber Safety Challenge | `data/cyber_safety.json` — 2,000 |
-| 22:00 | Learn in 60 Seconds | `data/learn_60_seconds.json` — 2,000 |
-| 23:00 | Weekly Challenge Result | `data/weekly_result.json` — 2,000 |
+The same 8 clock slots are used each day: **08:00 through 15:00 IST**.
+The active day group decides which format owns each slot.
 
-The schedule is configuration-driven in `schedule.json`. Scheduled GitHub runs pass the exact cron expression to the publisher, so a delayed scheduled run still maps to the intended format.
+### Day 1 — Group A
 
-## Files to edit later
+| IST | Format |
+|---|---|
+| 08:00 | Daily Challenge |
+| 09:00 | Crack the Code |
+| 10:00 | AI Detective |
+| 11:00 | Predict the Code |
+| 12:00 | Spot the Mistake |
+| 13:00 | Logic Puzzle |
+| 14:00 | 60-Second Tech Tip |
+| 15:00 | Build It |
 
-- `data/*.json` — content.
-- `schedule.json` — times and format mapping.
-- `themes.json` — the 10 visual themes.
-- `config.json` — image and project settings.
+### Day 2 — Group B
 
-No Python code changes are required to add or edit normal content records.
+| IST | Format |
+|---|---|
+| 08:00 | AI Challenge |
+| 09:00 | This or That |
+| 10:00 | Tech Explained |
+| 11:00 | Weekly Mission |
+| 12:00 | Science Challenge |
+| 13:00 | Cyber Safety Challenge |
+| 14:00 | Learn in 60 Seconds |
+| 15:00 | Weekly Challenge Result |
 
-## 10 premium themes
+Content records are always read dynamically from `data/*.json`. Each content type has its own `next_index`, so it continues where it stopped.
+
+## Template-specific UX
+
+The renderer no longer randomly selects a generic layout. Each content type has a dedicated UX:
+
+- Daily Challenge → premium 15-second challenge card
+- Crack the Code → decode/answer board
+- AI Detective → case-file evidence board
+- Predict the Code → code-editor + output choices
+- Spot the Mistake → error-hunt/correction layout
+- Logic Puzzle → pattern challenge board
+- 60-Second Tech Tip → tip card + action chips
+- Build It → mini-project roadmap
+- AI Challenge → prompt + verify checklist
+- This or That → split comparison screen
+- Tech Explained → one-sentence explainer + fact cards
+- Weekly Mission → 7-day roadmap
+- Science Challenge → formula/challenge board
+- Cyber Safety → safety challenge board
+- Learn in 60 Seconds → lesson timeline
+- Weekly Challenge Result → answer-reveal board
+
+## Themes
+
+There are exactly 10 premium themes in `themes.json`:
 
 1. Sunset Coral
 2. Ocean Blue
@@ -61,49 +79,26 @@ No Python code changes are required to add or edit normal content records.
 9. Gold Navy
 10. Midnight Neon
 
-The old theme definitions/layouts have been removed from the active renderer.
+Themes are deterministic per template and content index. They are **not randomly assigned**. Each format has a fixed starting theme and then cycles through the 10 themes as its JSON records advance.
 
-## Local generation
+## Content
 
-Install:
+The project contains 33,000 records:
 
-```bash
-pip install -r requirements.txt
-```
+- Daily Challenge: 3,000
+- Each of the other 15 formats: 2,000
 
-Generate one item:
+Edit the JSON files in `data/` to change future posts without changing Python code.
 
-```bash
-python app.py --content-type crack_the_code --index 1
-```
+## GitHub Actions
 
-Generate an existing Daily Challenge:
+The workflow supports:
 
-```bash
-python app.py --content-type daily_challenge --index 1
-```
+- `git push` → one publish using the current active day/slot
+- Manual **Run workflow** → one publish; `auto` follows the current active slot
+- Scheduled runs → exactly **8 runs per day**, 08:00–15:00 IST
 
-Generate a selected theme explicitly:
-
-```bash
-python app.py --content-type ai_detective --index 1 --theme 4
-```
-
-## Publishing
-
-Publish the next item for the current schedule slot:
-
-```bash
-python publish_daily.py
-```
-
-Publish a specific format:
-
-```bash
-python publish_daily.py --content-type predict_the_code
-```
-
-The publisher updates `state.json`, maintaining a separate next index for every content type.
+The workflow's own `state.json` commit is ignored by the push trigger, preventing an infinite publish loop.
 
 ## Required GitHub Secrets
 
@@ -115,51 +110,24 @@ INSTAGRAM_USER_ID
 INSTAGRAM_ACCESS_TOKEN
 ```
 
-`TIMEZONE=Asia/Kolkata` is configured by the workflow.
+No Cloudflare R2 is required.
 
-There are **no R2 secrets**.
+## Local generation
 
-## GitHub Actions
-
-The workflow runs on:
-
-1. `git push` to `main`.
-2. Manual **Run workflow**.
-3. 16 scheduled runs from 08:00 to 23:00 IST.
-
-For a manual run, choose `content_type` or leave it as `auto` to select the current schedule slot.
-
-The workflow commits the updated `state.json` back to `main`. Its own state commit uses:
-
-```text
-chore: update content state
+```bash
+pip install -r requirements.txt
+python app.py --content-type daily_challenge --index 1
+python app.py --content-type predict_the_code --index 1
 ```
 
-and is explicitly excluded from the push trigger, preventing an infinite publish loop.
+## Local publish
 
-The state push refreshes `origin/main` and retries up to five times to handle concurrent repository changes.
+```bash
+python publish_daily.py --content-type auto
+```
 
-## Instagram image hosting
+Or explicitly:
 
-For Instagram image publishing, the project stages the image as an unpublished Facebook Page photo and uses the returned Meta CDN image URL for the Instagram media container. This removes the Cloudflare R2 dependency.
-
-## Safety/content notes
-
-Cyber-safety content is defensive and educational. It does not provide instructions for harmful activity. AI content asks users to verify important claims and treat generated output as a draft.
-
-## State compatibility fix
-
-The content engine supports both the new multi-content `state.json` format and the original Daily Challenge format where `next_index` was a single integer. If an existing repository still contains the old format, the publisher automatically migrates that value to `next_index.daily_challenge` instead of failing with `AttributeError: 'int' object has no attribute 'get'`.
-
-`publish_daily.py` also forwards `SCHEDULE_CRON` to the publisher so scheduled GitHub Actions runs select the exact content type associated with the scheduled slot.
-
-
-## Instagram publishing reliability
-
-Instagram image publishing now follows the same reliability pattern used by the proven Instagram uploader:
-1. Create the Instagram media container.
-2. Poll `status_code/status` until Meta reports `FINISHED`.
-3. Call `media_publish` only after processing is complete.
-4. If Meta temporarily returns OAuth error `9007` / subcode `2207027` ("Media ID is not available"), wait and retry the publish request.
-
-This prevents the common race where `media_publish` is called while Meta is still processing the image.
+```bash
+python publish_daily.py --content-type crack_the_code
+```

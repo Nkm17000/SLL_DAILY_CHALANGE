@@ -1,106 +1,143 @@
 {
-  "version": 1,
+  "version": 2,
   "timezone": "Asia/Kolkata",
-  "mode": "one_post_per_trigger",
+  "mode": "eight_posts_per_day_alternating_16_formats",
+  "rotation": {
+    "day_1": "slots 1-8",
+    "day_2": "slots 9-16",
+    "day_3": "slots 1-8",
+    "rule": "The first 8 formats run on day 1, the next 8 formats on day 2, then the first 8 again on day 3. The cycle repeats every 2 days. Content index is tracked independently per format."
+  },
   "slots": [
     {
-      "content_type": "daily_challenge",
+      "slot": 1,
       "time_ist": "08:00",
+      "day_group": "A",
+      "content_type": "daily_challenge",
       "label": "Daily Challenge",
       "cron_utc": "30 2 * * *"
     },
     {
-      "content_type": "crack_the_code",
+      "slot": 2,
       "time_ist": "09:00",
+      "day_group": "A",
+      "content_type": "crack_the_code",
       "label": "Crack the Code",
       "cron_utc": "30 3 * * *"
     },
     {
-      "content_type": "ai_detective",
+      "slot": 3,
       "time_ist": "10:00",
+      "day_group": "A",
+      "content_type": "ai_detective",
       "label": "AI Detective",
       "cron_utc": "30 4 * * *"
     },
     {
-      "content_type": "predict_the_code",
+      "slot": 4,
       "time_ist": "11:00",
+      "day_group": "A",
+      "content_type": "predict_the_code",
       "label": "Predict the Code",
       "cron_utc": "30 5 * * *"
     },
     {
-      "content_type": "spot_the_mistake",
+      "slot": 5,
       "time_ist": "12:00",
+      "day_group": "A",
+      "content_type": "spot_the_mistake",
       "label": "Spot the Mistake",
       "cron_utc": "30 6 * * *"
     },
     {
-      "content_type": "logic_puzzle",
+      "slot": 6,
       "time_ist": "13:00",
+      "day_group": "A",
+      "content_type": "logic_puzzle",
       "label": "Logic Puzzle",
       "cron_utc": "30 7 * * *"
     },
     {
-      "content_type": "tech_tip",
+      "slot": 7,
       "time_ist": "14:00",
+      "day_group": "A",
+      "content_type": "tech_tip",
       "label": "60-Second Tech Tip",
       "cron_utc": "30 8 * * *"
     },
     {
-      "content_type": "build_it",
+      "slot": 8,
       "time_ist": "15:00",
+      "day_group": "A",
+      "content_type": "build_it",
       "label": "Build It",
       "cron_utc": "30 9 * * *"
     },
     {
+      "slot": 9,
+      "time_ist": "08:00",
+      "day_group": "B",
       "content_type": "ai_challenge",
-      "time_ist": "16:00",
       "label": "AI Challenge",
-      "cron_utc": "30 10 * * *"
+      "cron_utc": "30 2 * * *"
     },
     {
+      "slot": 10,
+      "time_ist": "09:00",
+      "day_group": "B",
       "content_type": "this_or_that",
-      "time_ist": "17:00",
       "label": "This or That",
-      "cron_utc": "30 11 * * *"
+      "cron_utc": "30 3 * * *"
     },
     {
+      "slot": 11,
+      "time_ist": "10:00",
+      "day_group": "B",
       "content_type": "tech_explained",
-      "time_ist": "18:00",
       "label": "Tech Explained",
-      "cron_utc": "30 12 * * *"
+      "cron_utc": "30 4 * * *"
     },
     {
+      "slot": 12,
+      "time_ist": "11:00",
+      "day_group": "B",
       "content_type": "weekly_mission",
-      "time_ist": "19:00",
       "label": "Weekly Mission",
-      "cron_utc": "30 13 * * *"
+      "cron_utc": "30 5 * * *"
     },
     {
+      "slot": 13,
+      "time_ist": "12:00",
+      "day_group": "B",
       "content_type": "science_challenge",
-      "time_ist": "20:00",
       "label": "Science Challenge",
-      "cron_utc": "30 14 * * *"
+      "cron_utc": "30 6 * * *"
     },
     {
+      "slot": 14,
+      "time_ist": "13:00",
+      "day_group": "B",
       "content_type": "cyber_safety",
-      "time_ist": "21:00",
       "label": "Cyber Safety Challenge",
-      "cron_utc": "30 15 * * *"
+      "cron_utc": "30 7 * * *"
     },
     {
+      "slot": 15,
+      "time_ist": "14:00",
+      "day_group": "B",
       "content_type": "learn_60_seconds",
-      "time_ist": "22:00",
       "label": "Learn in 60 Seconds",
-      "cron_utc": "30 16 * * *"
+      "cron_utc": "30 8 * * *"
     },
     {
+      "slot": 16,
+      "time_ist": "15:00",
+      "day_group": "B",
       "content_type": "weekly_result",
-      "time_ist": "23:00",
       "label": "Weekly Challenge Result",
-      "cron_utc": "30 17 * * *"
+      "cron_utc": "30 9 * * *"
     }
   ],
   "manual_default": "auto",
-  "push_default": "auto",
-  "notes": "16 daily IST slots from 08:00 through 23:00. Daily Challenge keeps the existing 3000-record collection; every added format has 2000 records. Scheduled GitHub runs pass the exact cron expression so delayed runs remain mapped to the intended format."
+  "push_default": "auto"
 }

@@ -46,23 +46,54 @@ def save_state(s):
 def load_schedule():
     return json.loads((ROOT/'schedule.json').read_text(encoding='utf-8'))
 
-def select_content_type(requested='auto', schedule_cron=''):
+def _rotation_start_date(state, now):
+    # The first successful publish initializes day 1. Thereafter the project
+    # alternates Group A / Group B every calendar day in Asia/Kolkata.
+    value=state.get('rotation_start_date')
+    if value:
+        try:
+            return datetime.fromisoformat(value).date()
+        except ValueError:
+            pass
+    start=now.date()
+    state['rotation_start_date']=start.isoformat()
+    return start
+
+def _active_group(state, now):
+    start=_rotation_start_date(state, now)
+    days=(now.date()-start).days
+    return 'A' if days % 2 == 0 else 'B'
+
+def _active_slot_for_time(slots, minutes, group):
+    group_slots=[s for s in slots if s.get('day_group')==group]
+    parsed=[]
+    for s in group_slots:
+        h,m=map(int,s['time_ist'].split(':')); parsed.append((h*60+m,s['content_type']))
+    if not parsed:
+        raise ValueError(f'No schedule slots configured for day group {group}')
+    prior=[x for x in parsed if x[0] <= minutes]
+    return max(prior)[1] if prior else parsed[0][1]
+
+def select_content_type(requested='auto', schedule_cron='', state=None):
     if requested and requested!='auto':
         if requested not in INDEX['content']: raise ValueError(f'Unknown content type: {requested}')
         return requested
-    if schedule_cron:
-        for slot in load_schedule()['slots']:
-            if slot.get('cron_utc') == schedule_cron:
-                return slot['content_type']
+    if state is None:
+        state=load_state()
     now=datetime.now(TZ)
-    slots=load_schedule()['slots']
-    # Pick the most recent slot on the current day; before the first slot use the first slot.
+    schedule=load_schedule()
+    slots=schedule['slots']
+    group=_active_group(state, now)
+
+    # Scheduled workflow sends the 8 shared cron values. Pick the content
+    # assigned to that clock slot for today's active group.
+    if schedule_cron:
+        matching=[s for s in slots if s.get('cron_utc')==schedule_cron and s.get('day_group')==group]
+        if matching:
+            return matching[0]['content_type']
+
     minutes=now.hour*60+now.minute
-    parsed=[]
-    for s in slots:
-        h,m=map(int,s['time_ist'].split(':')); parsed.append((h*60+m,s['content_type']))
-    prior=[x for x in parsed if x[0] <= minutes]
-    return max(prior)[1] if prior else parsed[0][1]
+    return _active_slot_for_time(slots, minutes, group)
 
 def next_index(state,kind):
     n=int(state.setdefault('next_index',{}).get(kind,1))
@@ -244,9 +275,8 @@ def instagram_image(public_url,caption):
     )
 
 def publish(kind=None,index=None,do_facebook=True,do_instagram=True,schedule_cron=''):
-    state=load_state(); kind=select_content_type(kind or 'auto', schedule_cron); index=index or next_index(state,kind)
-    theme_counter=int(state.get('theme_counter',0))+1; theme=(theme_counter-1)%10+1
-    item,image,cap,t=generate(kind,index,theme)
+    state=load_state(); kind=select_content_type(kind or 'auto', schedule_cron, state); index=index or next_index(state,kind)
+    item,image,cap,t=generate(kind,index)
     caption=cap.read_text(encoding='utf-8')
     result={'content_type':kind,'index':index,'id':item['id'],'theme':t['name'],'facebook':None,'instagram':None}
     staged=None
@@ -256,7 +286,6 @@ def publish(kind=None,index=None,do_facebook=True,do_instagram=True,schedule_cro
     if do_facebook:
         result['facebook']=facebook_photo(image,caption)
     state.setdefault('next_index',{})[kind]=1 if index>=INDEX['content'][kind]['total'] else index+1
-    state['theme_counter']=theme_counter
     state.setdefault('history',[]).append({'timestamp':int(time.time()),**result})
     # Keep history bounded for repository size.
     state['history']=state['history'][-500:]
