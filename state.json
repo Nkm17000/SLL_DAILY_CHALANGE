@@ -1,7 +1,7 @@
 {
   "next_index": {
     "daily_challenge": 4,
-    "logic_puzzle": 3,
+    "logic_puzzle": 4,
     "tech_tip": 2,
     "build_it": 2,
     "ai_challenge": 2,
@@ -306,6 +306,21 @@
         "id": "18077082134720045"
       },
       "staged_facebook_photo_id": "122122220859419769"
+    },
+    {
+      "timestamp": 1790949644,
+      "content_type": "logic_puzzle",
+      "index": 3,
+      "id": "sll-logic-puzzle-0003",
+      "theme": "Teal Mint",
+      "facebook": {
+        "id": "122122230129419769",
+        "post_id": "1317018278163213_122122230147419769"
+      },
+      "instagram": {
+        "id": "18092844074651517"
+      },
+      "staged_facebook_photo_id": "122122230057419769"
     }
   ],
   "theme_counter": 12,
