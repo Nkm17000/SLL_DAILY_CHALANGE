@@ -12,7 +12,8 @@
     "cyber_safety": 2,
     "learn_60_seconds": 2,
     "weekly_result": 2,
-    "crack_the_code": 2
+    "crack_the_code": 2,
+    "ai_detective": 2
   },
   "history": [
     {
@@ -258,6 +259,21 @@
         "id": "18101549882633016"
       },
       "staged_facebook_photo_id": "122122190883419769"
+    },
+    {
+      "timestamp": 1790937531,
+      "content_type": "ai_detective",
+      "index": 1,
+      "id": "sll-ai-detective-0001",
+      "theme": "Royal Violet",
+      "facebook": {
+        "id": "122122197033419769",
+        "post_id": "1317018278163213_122122197051419769"
+      },
+      "instagram": {
+        "id": "18197723971390615"
+      },
+      "staged_facebook_photo_id": "122122196991419769"
     }
   ],
   "theme_counter": 12,
