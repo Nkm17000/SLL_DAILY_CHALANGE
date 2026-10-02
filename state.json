@@ -1,6 +1,6 @@
 {
   "next_index": {
-    "daily_challenge": 3,
+    "daily_challenge": 4,
     "logic_puzzle": 3,
     "tech_tip": 2,
     "build_it": 2,
@@ -227,6 +227,21 @@
         "id": "18094949090647752"
       },
       "staged_facebook_photo_id": "122122126203419769"
+    },
+    {
+      "timestamp": 1790930792,
+      "content_type": "daily_challenge",
+      "index": 3,
+      "id": "slldc-0003",
+      "theme": "Royal Violet",
+      "facebook": {
+        "id": "122122178715419769",
+        "post_id": "1317018278163213_122122178745419769"
+      },
+      "instagram": {
+        "id": "18117073693993736"
+      },
+      "staged_facebook_photo_id": "122122178619419769"
     }
   ],
   "theme_counter": 12,
