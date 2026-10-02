@@ -14,7 +14,8 @@
     "weekly_result": 2,
     "crack_the_code": 2,
     "ai_detective": 2,
-    "predict_the_code": 2
+    "predict_the_code": 2,
+    "spot_the_mistake": 2
   },
   "history": [
     {
@@ -290,6 +291,21 @@
         "id": "18064956608685515"
       },
       "staged_facebook_photo_id": "122122203987419769"
+    },
+    {
+      "timestamp": 1790946072,
+      "content_type": "spot_the_mistake",
+      "index": 1,
+      "id": "sll-spot-the-mistake-0001",
+      "theme": "Electric Indigo",
+      "facebook": {
+        "id": "122122220907419769",
+        "post_id": "1317018278163213_122122220925419769"
+      },
+      "instagram": {
+        "id": "18077082134720045"
+      },
+      "staged_facebook_photo_id": "122122220859419769"
     }
   ],
   "theme_counter": 12,
