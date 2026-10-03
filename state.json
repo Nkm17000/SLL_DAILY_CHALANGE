@@ -8,7 +8,7 @@
     "this_or_that": 3,
     "tech_explained": 3,
     "weekly_mission": 3,
-    "science_challenge": 2,
+    "science_challenge": 3,
     "cyber_safety": 2,
     "learn_60_seconds": 2,
     "weekly_result": 2,
@@ -411,6 +411,21 @@
         "id": "18003863202005846"
       },
       "staged_facebook_photo_id": "122122430283419769"
+    },
+    {
+      "timestamp": 1791028558,
+      "content_type": "science_challenge",
+      "index": 2,
+      "id": "sll-science-challenge-0002",
+      "theme": "Emerald Fresh",
+      "facebook": {
+        "id": "122122444701419769",
+        "post_id": "1317018278163213_122122444719419769"
+      },
+      "instagram": {
+        "id": "18409192024092648"
+      },
+      "staged_facebook_photo_id": "122122444659419769"
     }
   ],
   "theme_counter": 12,
