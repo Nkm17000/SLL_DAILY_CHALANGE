@@ -11,7 +11,7 @@
     "science_challenge": 3,
     "cyber_safety": 3,
     "learn_60_seconds": 3,
-    "weekly_result": 2,
+    "weekly_result": 3,
     "crack_the_code": 2,
     "ai_detective": 2,
     "predict_the_code": 2,
@@ -456,6 +456,21 @@
         "id": "17959207953221583"
       },
       "staged_facebook_photo_id": "122122463865419769"
+    },
+    {
+      "timestamp": 1791037335,
+      "content_type": "weekly_result",
+      "index": 2,
+      "id": "sll-weekly-result-0002",
+      "theme": "Berry Pink",
+      "facebook": {
+        "id": "122122471353419769",
+        "post_id": "1317018278163213_122122471383419769"
+      },
+      "instagram": {
+        "id": "18034189943667924"
+      },
+      "staged_facebook_photo_id": "122122471281419769"
     }
   ],
   "theme_counter": 12,
