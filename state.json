@@ -10,7 +10,7 @@
     "weekly_mission": 3,
     "science_challenge": 3,
     "cyber_safety": 3,
-    "learn_60_seconds": 2,
+    "learn_60_seconds": 3,
     "weekly_result": 2,
     "crack_the_code": 2,
     "ai_detective": 2,
@@ -441,6 +441,21 @@
         "id": "18187692760414980"
       },
       "staged_facebook_photo_id": "122122452387419769"
+    },
+    {
+      "timestamp": 1791034655,
+      "content_type": "learn_60_seconds",
+      "index": 2,
+      "id": "sll-learn-60-seconds-0002",
+      "theme": "Mango Sun",
+      "facebook": {
+        "id": "122122464111419769",
+        "post_id": "1317018278163213_122122464135419769"
+      },
+      "instagram": {
+        "id": "17959207953221583"
+      },
+      "staged_facebook_photo_id": "122122463865419769"
     }
   ],
   "theme_counter": 12,
