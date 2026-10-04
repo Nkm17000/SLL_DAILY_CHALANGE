@@ -15,7 +15,7 @@
     "crack_the_code": 3,
     "ai_detective": 3,
     "predict_the_code": 3,
-    "spot_the_mistake": 2
+    "spot_the_mistake": 3
   },
   "history": [
     {
@@ -531,6 +531,21 @@
         "id": "17910259428517147"
       },
       "staged_facebook_photo_id": "122122682619419769"
+    },
+    {
+      "timestamp": 1791117963,
+      "content_type": "spot_the_mistake",
+      "index": 2,
+      "id": "sll-spot-the-mistake-0002",
+      "theme": "Mango Sun",
+      "facebook": {
+        "id": "122122697751419769",
+        "post_id": "1317018278163213_122122697775419769"
+      },
+      "instagram": {
+        "id": "18054503885800206"
+      },
+      "staged_facebook_photo_id": "122122697517419769"
     }
   ],
   "theme_counter": 12,
