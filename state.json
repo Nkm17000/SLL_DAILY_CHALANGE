@@ -14,7 +14,7 @@
     "weekly_result": 3,
     "crack_the_code": 3,
     "ai_detective": 3,
-    "predict_the_code": 2,
+    "predict_the_code": 3,
     "spot_the_mistake": 2
   },
   "history": [
@@ -516,6 +516,21 @@
         "id": "18628618456016051"
       },
       "staged_facebook_photo_id": "122122676637419769"
+    },
+    {
+      "timestamp": 1791112459,
+      "content_type": "predict_the_code",
+      "index": 2,
+      "id": "sll-predict-the-code-0002",
+      "theme": "Electric Indigo",
+      "facebook": {
+        "id": "122122682667419769",
+        "post_id": "1317018278163213_122122682685419769"
+      },
+      "instagram": {
+        "id": "17910259428517147"
+      },
+      "staged_facebook_photo_id": "122122682619419769"
     }
   ],
   "theme_counter": 12,
