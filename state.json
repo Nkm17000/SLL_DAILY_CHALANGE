@@ -13,7 +13,7 @@
     "learn_60_seconds": 3,
     "weekly_result": 3,
     "crack_the_code": 3,
-    "ai_detective": 2,
+    "ai_detective": 3,
     "predict_the_code": 2,
     "spot_the_mistake": 2
   },
@@ -501,6 +501,21 @@
         "id": "18104073632353369"
       },
       "staged_facebook_photo_id": "122122669191419769"
+    },
+    {
+      "timestamp": 1791110547,
+      "content_type": "ai_detective",
+      "index": 2,
+      "id": "sll-ai-detective-0002",
+      "theme": "Emerald Fresh",
+      "facebook": {
+        "id": "122122676685419769",
+        "post_id": "1317018278163213_122122676703419769"
+      },
+      "instagram": {
+        "id": "18628618456016051"
+      },
+      "staged_facebook_photo_id": "122122676637419769"
     }
   ],
   "theme_counter": 12,
