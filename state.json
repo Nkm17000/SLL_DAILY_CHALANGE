@@ -1,6 +1,6 @@
 {
   "next_index": {
-    "daily_challenge": 4,
+    "daily_challenge": 5,
     "logic_puzzle": 4,
     "tech_tip": 3,
     "build_it": 3,
@@ -471,6 +471,21 @@
         "id": "18034189943667924"
       },
       "staged_facebook_photo_id": "122122471281419769"
+    },
+    {
+      "timestamp": 1791103077,
+      "content_type": "daily_challenge",
+      "index": 4,
+      "id": "slldc-0004",
+      "theme": "Emerald Fresh",
+      "facebook": {
+        "id": "122122653741419769",
+        "post_id": "1317018278163213_122122653765419769"
+      },
+      "instagram": {
+        "id": "17888566356621770"
+      },
+      "staged_facebook_photo_id": "122122653597419769"
     }
   ],
   "theme_counter": 12,
