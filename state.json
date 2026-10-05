@@ -10,7 +10,7 @@
     "weekly_mission": 4,
     "science_challenge": 4,
     "cyber_safety": 4,
-    "learn_60_seconds": 3,
+    "learn_60_seconds": 4,
     "weekly_result": 3,
     "crack_the_code": 3,
     "ai_detective": 3,
@@ -681,6 +681,21 @@
         "id": "17943981279086687"
       },
       "staged_facebook_photo_id": "122122973631419769"
+    },
+    {
+      "timestamp": 1791220685,
+      "content_type": "learn_60_seconds",
+      "index": 3,
+      "id": "sll-learn-60-seconds-0003",
+      "theme": "Berry Pink",
+      "facebook": {
+        "id": "122122987545419769",
+        "post_id": "1317018278163213_122122987563419769"
+      },
+      "instagram": {
+        "id": "18106090763248683"
+      },
+      "staged_facebook_photo_id": "122122987497419769"
     }
   ],
   "theme_counter": 12,
