@@ -5,7 +5,7 @@
     "tech_tip": 4,
     "build_it": 4,
     "ai_challenge": 4,
-    "this_or_that": 3,
+    "this_or_that": 4,
     "tech_explained": 3,
     "weekly_mission": 3,
     "science_challenge": 3,
@@ -606,6 +606,21 @@
         "id": "18131119177757316"
       },
       "staged_facebook_photo_id": "122122905213419769"
+    },
+    {
+      "timestamp": 1791197088,
+      "content_type": "this_or_that",
+      "index": 3,
+      "id": "sll-this-or-that-0003",
+      "theme": "Ocean Blue",
+      "facebook": {
+        "id": "122122916649419769",
+        "post_id": "1317018278163213_122122916667419769"
+      },
+      "instagram": {
+        "id": "18005307440791503"
+      },
+      "staged_facebook_photo_id": "122122916595419769"
     }
   ],
   "theme_counter": 12,
