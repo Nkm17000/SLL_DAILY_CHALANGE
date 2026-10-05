@@ -3,7 +3,7 @@
     "daily_challenge": 5,
     "logic_puzzle": 5,
     "tech_tip": 4,
-    "build_it": 4,
+    "build_it": 5,
     "ai_challenge": 4,
     "this_or_that": 4,
     "tech_explained": 4,
@@ -696,6 +696,21 @@
         "id": "18106090763248683"
       },
       "staged_facebook_photo_id": "122122987497419769"
+    },
+    {
+      "timestamp": 1791225635,
+      "content_type": "build_it",
+      "index": 4,
+      "id": "sll-build-it-0004",
+      "theme": "Sunset Coral",
+      "facebook": {
+        "id": "122123004399419769",
+        "post_id": "1317018278163213_122123004417419769"
+      },
+      "instagram": {
+        "id": "18129435031693690"
+      },
+      "staged_facebook_photo_id": "122123004333419769"
     }
   ],
   "theme_counter": 12,
