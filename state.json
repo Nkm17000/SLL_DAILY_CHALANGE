@@ -6,7 +6,7 @@
     "build_it": 4,
     "ai_challenge": 4,
     "this_or_that": 4,
-    "tech_explained": 3,
+    "tech_explained": 4,
     "weekly_mission": 3,
     "science_challenge": 3,
     "cyber_safety": 3,
@@ -621,6 +621,21 @@
         "id": "18005307440791503"
       },
       "staged_facebook_photo_id": "122122916595419769"
+    },
+    {
+      "timestamp": 1791200679,
+      "content_type": "tech_explained",
+      "index": 3,
+      "id": "sll-tech-explained-0003",
+      "theme": "Royal Violet",
+      "facebook": {
+        "id": "122122929411419769",
+        "post_id": "1317018278163213_122122929429419769"
+      },
+      "instagram": {
+        "id": "18124900963845069"
+      },
+      "staged_facebook_photo_id": "122122929363419769"
     }
   ],
   "theme_counter": 12,
