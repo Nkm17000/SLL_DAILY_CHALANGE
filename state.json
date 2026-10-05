@@ -8,7 +8,7 @@
     "this_or_that": 4,
     "tech_explained": 4,
     "weekly_mission": 4,
-    "science_challenge": 3,
+    "science_challenge": 4,
     "cyber_safety": 3,
     "learn_60_seconds": 3,
     "weekly_result": 3,
@@ -651,6 +651,21 @@
         "id": "18208609132363691"
       },
       "staged_facebook_photo_id": "122122937445419769"
+    },
+    {
+      "timestamp": 1791213023,
+      "content_type": "science_challenge",
+      "index": 3,
+      "id": "sll-science-challenge-0003",
+      "theme": "Electric Indigo",
+      "facebook": {
+        "id": "122122963719419769",
+        "post_id": "1317018278163213_122122963749419769"
+      },
+      "instagram": {
+        "id": "18101975126040876"
+      },
+      "staged_facebook_photo_id": "122122963641419769"
     }
   ],
   "theme_counter": 12,
