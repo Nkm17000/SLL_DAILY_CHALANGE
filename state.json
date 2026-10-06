@@ -14,7 +14,7 @@
     "weekly_result": 3,
     "crack_the_code": 4,
     "ai_detective": 4,
-    "predict_the_code": 3,
+    "predict_the_code": 4,
     "spot_the_mistake": 3
   },
   "history": [
@@ -756,6 +756,21 @@
         "id": "18103621559570792"
       },
       "staged_facebook_photo_id": "122123166249419769"
+    },
+    {
+      "timestamp": 1791288660,
+      "content_type": "predict_the_code",
+      "index": 3,
+      "id": "sll-predict-the-code-0003",
+      "theme": "Mango Sun",
+      "facebook": {
+        "id": "122123174823419769",
+        "post_id": "1317018278163213_122123174847419769"
+      },
+      "instagram": {
+        "id": "18132938848662959"
+      },
+      "staged_facebook_photo_id": "122123174757419769"
     }
   ],
   "theme_counter": 12,
