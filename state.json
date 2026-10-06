@@ -12,7 +12,7 @@
     "cyber_safety": 4,
     "learn_60_seconds": 4,
     "weekly_result": 3,
-    "crack_the_code": 3,
+    "crack_the_code": 4,
     "ai_detective": 3,
     "predict_the_code": 3,
     "spot_the_mistake": 3
@@ -726,6 +726,21 @@
         "id": "18122576101782533"
       },
       "staged_facebook_photo_id": "122123144583419769"
+    },
+    {
+      "timestamp": 1791283064,
+      "content_type": "crack_the_code",
+      "index": 3,
+      "id": "sll-crack-the-code-0003",
+      "theme": "Emerald Fresh",
+      "facebook": {
+        "id": "122123158083419769",
+        "post_id": "1317018278163213_122123158101419769"
+      },
+      "instagram": {
+        "id": "18148796920492487"
+      },
+      "staged_facebook_photo_id": "122123157957419769"
     }
   ],
   "theme_counter": 12,
