@@ -2,7 +2,7 @@
   "next_index": {
     "daily_challenge": 6,
     "logic_puzzle": 6,
-    "tech_tip": 4,
+    "tech_tip": 5,
     "build_it": 5,
     "ai_challenge": 4,
     "this_or_that": 4,
@@ -801,6 +801,21 @@
         "id": "18118884997935165"
       },
       "staged_facebook_photo_id": "122123203407419769"
+    },
+    {
+      "timestamp": 1791300166,
+      "content_type": "tech_tip",
+      "index": 4,
+      "id": "sll-tech-tip-0004",
+      "theme": "Midnight Neon",
+      "facebook": {
+        "id": "122123215131419769",
+        "post_id": "1317018278163213_122123215149419769"
+      },
+      "instagram": {
+        "id": "18640583035061253"
+      },
+      "staged_facebook_photo_id": "122123215083419769"
     }
   ],
   "theme_counter": 12,
