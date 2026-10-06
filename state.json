@@ -15,7 +15,7 @@
     "crack_the_code": 4,
     "ai_detective": 4,
     "predict_the_code": 4,
-    "spot_the_mistake": 3
+    "spot_the_mistake": 4
   },
   "history": [
     {
@@ -771,6 +771,21 @@
         "id": "18132938848662959"
       },
       "staged_facebook_photo_id": "122123174757419769"
+    },
+    {
+      "timestamp": 1791293506,
+      "content_type": "spot_the_mistake",
+      "index": 3,
+      "id": "sll-spot-the-mistake-0003",
+      "theme": "Berry Pink",
+      "facebook": {
+        "id": "122123195949419769",
+        "post_id": "1317018278163213_122123195967419769"
+      },
+      "instagram": {
+        "id": "17904261876352803"
+      },
+      "staged_facebook_photo_id": "122123195817419769"
     }
   ],
   "theme_counter": 12,
