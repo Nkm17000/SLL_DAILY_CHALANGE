@@ -1,0 +1,47 @@
+{
+  "challenge_no": 1,
+  "questions": [
+    {
+      "challenge_no": 1,
+      "subject": "MATH",
+      "question": "If the sum of three consecutive even numbers is 48, what is the smallest of these numbers?",
+      "fingerprint": "d8efec892f88d6d570d37f82ca5375b8ff249b67503926151991348636c7d6c9",
+      "source_url": "https://ncert.nic.in/textbook.php?ke=5_13"
+    },
+    {
+      "challenge_no": 1,
+      "subject": "GKGS",
+      "question": "The headquarters of the Reserve Bank of India is located in which city?",
+      "fingerprint": "6ffa32934dc847a59717e7886050ec53bcd12d886aada4e596a1b3c94e0b7986",
+      "source_url": "https://www.rbi.org.in"
+    },
+    {
+      "challenge_no": 1,
+      "subject": "REASONING",
+      "question": "What is the next number in the series: 2, 6, 12, 20, ?",
+      "fingerprint": "1c615b6460a49358dcedd276225f23cffc378e71c91809e99a61378b8c5d890b",
+      "source_url": "https://www.indiabix.com/aptitude/number-series/"
+    },
+    {
+      "challenge_no": 1,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the verb tense is used incorrectly.",
+      "fingerprint": "590b56a7ca2fa2ee2f2f54a9af26d1826fd072a3de313340a428db00d7f85ded",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/present-perfect"
+    }
+  ],
+  "last_quiz": {
+    "challenge_no": 1,
+    "subject": "ENGLISH",
+    "question": "Select the sentence in which the verb tense is used incorrectly.",
+    "options": {
+      "A": "She has been working here since five years.",
+      "B": "If he had known, he would have come earlier.",
+      "C": "They were watching a movie when the power went out.",
+      "D": "I will finish the report by tomorrow."
+    },
+    "correct_option": "A",
+    "explanation": "\"Since\" requires a point in time; the correct phrase is \"for five years\". Hence option A is incorrect.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/present-perfect"
+  }
+}
