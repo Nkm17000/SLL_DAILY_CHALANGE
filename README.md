@@ -34,3 +34,8 @@ python quiz_challenge.py
 - Do not commit real access tokens or API keys.
 - Deduplication is based on generated question text stored in `quiz_state.json`; preserve that file between runs.
 - API publication is not tested against your real Meta accounts. A rate limit/restriction from Meta can still cause publishing to fail.
+
+
+## Platform enable/disable behavior
+
+Publishing is controlled by `config.json` only. Set an account's `enabled` to `false` or remove its entry to prevent calls to that account. If a platform has no enabled accounts with both required ID and token secrets, the script skips that platform instead of failing the run. If Instagram accounts are enabled but there is no enabled Facebook account, Instagram publishing is skipped too, because this version uses Facebook to host a public image URL for Instagram. The script will still generate the four images and captions and save quiz history.

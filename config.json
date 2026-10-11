@@ -21,6 +21,26 @@
       "enabled": true,
       "page_id_env": "FACEBOOK_PAGE_ID",
       "page_token_env": "FACEBOOK_PAGE_ACCESS_TOKEN"
+    },
+    {
+      "name": "SLL Facebook Page 2",
+      "enabled": true,
+      "page_id_env": "FACEBOOK_PAGE_ID_2",
+      "page_token_env": "FACEBOOK_PAGE_ACCESS_TOKEN_2"
+    }
+  ],
+  "instagram_accounts": [
+    {
+      "name": "SLL Instagram 1",
+      "enabled": true,
+      "user_id_env": "INSTAGRAM_USER_ID",
+      "access_token_env": "INSTAGRAM_ACCESS_TOKEN"
+    },
+    {
+      "name": "SLL Instagram 2",
+      "enabled": true,
+      "user_id_env": "INSTAGRAM_USER_ID_2",
+      "access_token_env": "INSTAGRAM_ACCESS_TOKEN_2"
     }
   ],
   "account_config_note": "Add more objects to facebook_accounts / instagram_accounts. Each env name must match a GitHub Secret exposed in workflow env. Never put token values in this file."

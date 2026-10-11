@@ -202,9 +202,17 @@ def main():
     number=int(state.get("challenge_no",0))+1
     previous=state.get("last_quiz")
     outputs=[]; results=[]
+    # Publishing destinations are controlled only by config.json. Disabled or
+    # absent platform entries result in zero API calls for that platform.
     fb=account_pairs("facebook","FACEBOOK_PAGE_ID","FACEBOOK_PAGE_ACCESS_TOKEN")
     ig=account_pairs("instagram","INSTAGRAM_USER_ID","INSTAGRAM_ACCESS_TOKEN")
-    if not a.dry_run and (not fb or not ig): raise RuntimeError("Configure at least one Facebook and one Instagram account using the documented secrets.")
+    if not fb:
+        print("INFO: No enabled, credential-complete Facebook accounts in config.json; Facebook publishing is disabled for this run.")
+    if not ig:
+        print("INFO: No enabled, credential-complete Instagram accounts in config.json; Instagram publishing is disabled for this run.")
+    if ig and not fb:
+        print("WARNING: Instagram accounts are enabled, but this implementation needs an enabled Facebook account to host the image publicly. Instagram publishing will be skipped; no Facebook API calls will be made because no Facebook account is enabled/configured.")
+        ig=[]
     staged_url=None
     for q in questions:
         q["challenge_no"]=number
