@@ -1,115 +1,95 @@
-name: Smart Learning Lab Content Engine
+name: SLL Daily Quiz Challenge
 
 on:
   push:
-    branches:
-      - main
-
+    branches: [main]
   workflow_dispatch:
     inputs:
-      content_type:
-        description: 'Content type (auto follows the active 8-format day rotation)'
+      dry_run:
+        description: Generate four images without publishing
         required: false
-        default: 'auto'
-        type: choice
-        options:
-          - auto
-          - daily_challenge
-          - crack_the_code
-          - ai_detective
-          - predict_the_code
-          - spot_the_mistake
-          - logic_puzzle
-          - tech_tip
-          - build_it
-          - ai_challenge
-          - this_or_that
-          - tech_explained
-          - weekly_mission
-          - science_challenge
-          - cyber_safety
-          - learn_60_seconds
-          - weekly_result
-
-  # Exactly 8 scheduled runs per day.
-  # Day 1 uses formats 1-8; day 2 uses formats 9-16; day 3 starts 1-8 again.
-  # 08:00-15:00 IST = 02:30-09:30 UTC.
+        default: false
+        type: boolean
   schedule:
-    - cron: '30 2 * * *'
-    - cron: '30 3 * * *'
-    - cron: '30 4 * * *'
-    - cron: '30 5 * * *'
-    - cron: '30 6 * * *'
-    - cron: '30 7 * * *'
-    - cron: '30 8 * * *'
-    - cron: '30 9 * * *'
+    - cron: "30 0 * * *" # 06:00 IST daily
 
 permissions:
   contents: write
-
 concurrency:
-  group: smart-learning-lab-content-engine
+  group: sll-daily-quiz
   cancel-in-progress: false
 
 jobs:
-  publish:
-    if: "${{ github.event_name != 'push' || github.event.head_commit.message != 'chore: update content state' }}"
+  challenge:
+    if: "${{ github.event_name != 'push' || github.event.head_commit.message != 'chore: update quiz state' }}"
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: main
-          persist-credentials: true
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
           cache: pip
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Publish selected content to Facebook and Instagram
+      - run: pip install -r requirements.txt
+      - name: Generate four medium-or-harder quiz challenges and publish
         env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ secrets.GROQ_MODEL }}
           META_GRAPH_VERSION: ${{ secrets.META_GRAPH_VERSION }}
+          TIMEZONE: Asia/Kolkata
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID_2: ${{ secrets.FACEBOOK_PAGE_ID_2 }}
+          FACEBOOK_PAGE_ACCESS_TOKEN_2: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN_2 }}
+          FACEBOOK_PAGE_ID_3: ${{ secrets.FACEBOOK_PAGE_ID_3 }}
+          FACEBOOK_PAGE_ACCESS_TOKEN_3: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN_3 }}
+          FACEBOOK_PAGE_ID_4: ${{ secrets.FACEBOOK_PAGE_ID_4 }}
+          FACEBOOK_PAGE_ACCESS_TOKEN_4: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN_4 }}
+          FACEBOOK_PAGE_ID_5: ${{ secrets.FACEBOOK_PAGE_ID_5 }}
+          FACEBOOK_PAGE_ACCESS_TOKEN_5: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN_5 }}
+          FACEBOOK_PAGE_ID_6: ${{ secrets.FACEBOOK_PAGE_ID_6 }}
+          FACEBOOK_PAGE_ACCESS_TOKEN_6: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN_6 }}
+          FACEBOOK_PAGE_ID_7: ${{ secrets.FACEBOOK_PAGE_ID_7 }}
+          FACEBOOK_PAGE_ACCESS_TOKEN_7: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN_7 }}
+          FACEBOOK_PAGE_ID_8: ${{ secrets.FACEBOOK_PAGE_ID_8 }}
+          FACEBOOK_PAGE_ACCESS_TOKEN_8: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN_8 }}
+          FACEBOOK_PAGE_ID_9: ${{ secrets.FACEBOOK_PAGE_ID_9 }}
+          FACEBOOK_PAGE_ACCESS_TOKEN_9: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN_9 }}
+          FACEBOOK_PAGE_ID_10: ${{ secrets.FACEBOOK_PAGE_ID_10 }}
+          FACEBOOK_PAGE_ACCESS_TOKEN_10: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN_10 }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          TIMEZONE: Asia/Kolkata
-          CONTENT_TYPE: ${{ github.event.inputs.content_type || 'auto' }}
-          SCHEDULE_CRON: ${{ github.event.schedule || '' }}
-        run: python publish_daily.py --content-type "$CONTENT_TYPE" --schedule-cron "$SCHEDULE_CRON"
-
-      - name: Commit and push state safely
-        shell: bash
+          INSTAGRAM_USER_ID_2: ${{ secrets.INSTAGRAM_USER_ID_2 }}
+          INSTAGRAM_ACCESS_TOKEN_2: ${{ secrets.INSTAGRAM_ACCESS_TOKEN_2 }}
+          INSTAGRAM_USER_ID_3: ${{ secrets.INSTAGRAM_USER_ID_3 }}
+          INSTAGRAM_ACCESS_TOKEN_3: ${{ secrets.INSTAGRAM_ACCESS_TOKEN_3 }}
+          INSTAGRAM_USER_ID_4: ${{ secrets.INSTAGRAM_USER_ID_4 }}
+          INSTAGRAM_ACCESS_TOKEN_4: ${{ secrets.INSTAGRAM_ACCESS_TOKEN_4 }}
+          INSTAGRAM_USER_ID_5: ${{ secrets.INSTAGRAM_USER_ID_5 }}
+          INSTAGRAM_ACCESS_TOKEN_5: ${{ secrets.INSTAGRAM_ACCESS_TOKEN_5 }}
+          INSTAGRAM_USER_ID_6: ${{ secrets.INSTAGRAM_USER_ID_6 }}
+          INSTAGRAM_ACCESS_TOKEN_6: ${{ secrets.INSTAGRAM_ACCESS_TOKEN_6 }}
+          INSTAGRAM_USER_ID_7: ${{ secrets.INSTAGRAM_USER_ID_7 }}
+          INSTAGRAM_ACCESS_TOKEN_7: ${{ secrets.INSTAGRAM_ACCESS_TOKEN_7 }}
+          INSTAGRAM_USER_ID_8: ${{ secrets.INSTAGRAM_USER_ID_8 }}
+          INSTAGRAM_ACCESS_TOKEN_8: ${{ secrets.INSTAGRAM_ACCESS_TOKEN_8 }}
+          INSTAGRAM_USER_ID_9: ${{ secrets.INSTAGRAM_USER_ID_9 }}
+          INSTAGRAM_ACCESS_TOKEN_9: ${{ secrets.INSTAGRAM_ACCESS_TOKEN_9 }}
+          INSTAGRAM_USER_ID_10: ${{ secrets.INSTAGRAM_USER_ID_10 }}
+          INSTAGRAM_ACCESS_TOKEN_10: ${{ secrets.INSTAGRAM_ACCESS_TOKEN_10 }}
         run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          test -f state.json || { echo 'state.json missing; nothing to commit.'; exit 0; }
-          cp state.json /tmp/sll_state.json
-
-          for attempt in 1 2 3 4 5; do
-            git fetch --prune origin main
-            git reset --hard origin/main
-            cp /tmp/sll_state.json state.json
-            git add state.json
-            if git diff --cached --quiet; then
-              echo 'No state changes to commit.'
-              exit 0
-            fi
-            git commit -m 'chore: update content state'
-            if git push origin HEAD:main; then
-              echo "State push succeeded on attempt ${attempt}."
-              exit 0
-            fi
-            echo "State push attempt ${attempt} failed; retrying with latest main."
-          done
-
-          echo 'Could not push state after 5 attempts.'
-          exit 1
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python quiz_challenge.py --dry-run
+          else
+            python quiz_challenge.py
+          fi
+      - name: Commit quiz history
+        if: always()
+        run: |
+          if [ -f quiz_state.json ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add quiz_state.json
+            git diff --cached --quiet || (git commit -m 'chore: update quiz state' && git push)
+          fi
