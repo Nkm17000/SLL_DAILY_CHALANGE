@@ -1,5 +1,5 @@
 {
-  "challenge_no": 1,
+  "challenge_no": 2,
   "questions": [
     {
       "challenge_no": 1,
@@ -28,20 +28,48 @@
       "question": "Select the sentence in which the verb tense is used incorrectly.",
       "fingerprint": "590b56a7ca2fa2ee2f2f54a9af26d1826fd072a3de313340a428db00d7f85ded",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/present-perfect"
+    },
+    {
+      "challenge_no": 2,
+      "subject": "MATH",
+      "question": "The sum of the ages of A, B and C is 48 years. A is 2 years older than B, and C is 4 years older than B. What is B's age?",
+      "fingerprint": "b59ee5392eb667a5f597ecf7993d4fcc85ff1e3789143c5fd2a77c2de584e967",
+      "source_url": "https://ncert.nic.in/textbook.php?leph1=0-5"
+    },
+    {
+      "challenge_no": 2,
+      "subject": "GKGS",
+      "question": "On which date was the Goods and Services Tax (GST) implemented across India?",
+      "fingerprint": "adcffc83020e050750e5b9f540993def55b351c29a0ca1a5cfd5873433e04787",
+      "source_url": "https://www.incometaxindia.gov.in/pages/gst.aspx"
+    },
+    {
+      "challenge_no": 2,
+      "subject": "REASONING",
+      "question": "All engineers are mathematicians. Some mathematicians are scientists. Which conclusion is definitely true?",
+      "fingerprint": "f0274d72611a9c3cf347194d2654c9455b06229e3c5cc8471d8e89eebce720cf",
+      "source_url": "https://www.indiabix.com/logical-reasoning/syllogism/"
+    },
+    {
+      "challenge_no": 2,
+      "subject": "ENGLISH",
+      "question": "Choose the correctly punctuated sentence.",
+      "fingerprint": "c8019dc70167adbf91b4d9cf213665b1227031c1b8de9baad6a9524a350059a1",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/punctuation"
     }
   ],
   "last_quiz": {
-    "challenge_no": 1,
+    "challenge_no": 2,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the verb tense is used incorrectly.",
+    "question": "Choose the correctly punctuated sentence.",
     "options": {
-      "A": "She has been working here since five years.",
-      "B": "If he had known, he would have come earlier.",
-      "C": "They were watching a movie when the power went out.",
-      "D": "I will finish the report by tomorrow."
+      "A": "The committee, which met on Monday, decided to postpone the meeting.",
+      "B": "The committee which met on Monday decided to postpone the meeting.",
+      "C": "The committee which, met on Monday decided to postpone the meeting.",
+      "D": "The committee which met on Monday, decided to postpone the meeting."
     },
     "correct_option": "A",
-    "explanation": "\"Since\" requires a point in time; the correct phrase is \"for five years\". Hence option A is incorrect.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/present-perfect"
+    "explanation": "The clause \"which met on Monday\" is non‑restrictive; it must be set off by commas.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/punctuation"
   }
 }
