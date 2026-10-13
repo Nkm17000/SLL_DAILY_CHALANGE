@@ -1,5 +1,5 @@
 {
-  "challenge_no": 2,
+  "challenge_no": 3,
   "questions": [
     {
       "challenge_no": 1,
@@ -56,20 +56,48 @@
       "question": "Choose the correctly punctuated sentence.",
       "fingerprint": "c8019dc70167adbf91b4d9cf213665b1227031c1b8de9baad6a9524a350059a1",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/punctuation"
+    },
+    {
+      "challenge_no": 3,
+      "subject": "MATH",
+      "question": "A train covers 150 km at 60 km/h and returns the same distance at 40 km/h. What is its average speed for the round trip?",
+      "fingerprint": "31b85b2e7716122e8dc9a63f85d53712d8c8a869e66527b99929ce03b13fdab3",
+      "source_url": "https://ncert.nic.in/textbook.php?ke=10&sub=maths"
+    },
+    {
+      "challenge_no": 3,
+      "subject": "GKGS",
+      "question": "The Insolvency and Bankruptcy Code (IBC) was enacted by the Indian Parliament in which year?",
+      "fingerprint": "23e904c261c5ff0a61dc0510f46d08710e53abb842a4e3d12e8a01366d96cfc3",
+      "source_url": "https://legislative.gov.in/actsofparliamentfromtheyear/insolvency-and-bankruptcy-code-2016"
+    },
+    {
+      "challenge_no": 3,
+      "subject": "REASONING",
+      "question": "In a certain code, the word 'BRIGHT' is written as 'CSJHIU'. How will the word 'LIGHT' be coded?",
+      "fingerprint": "ced7c70f425d6282d6684eee0109f3dcbc58ebf81ed00124a5406310632dfecf",
+      "source_url": "https://www.indiabix.com/aptitude/coding-decoding/"
+    },
+    {
+      "challenge_no": 3,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the idiom is used correctly.",
+      "fingerprint": "7945442bc93c846be67cafc926b2c6462bbc9721f53fd16c0569afa0a6a34398",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/idioms"
     }
   ],
   "last_quiz": {
-    "challenge_no": 2,
+    "challenge_no": 3,
     "subject": "ENGLISH",
-    "question": "Choose the correctly punctuated sentence.",
+    "question": "Select the sentence in which the idiom is used correctly.",
     "options": {
-      "A": "The committee, which met on Monday, decided to postpone the meeting.",
-      "B": "The committee which met on Monday decided to postpone the meeting.",
-      "C": "The committee which, met on Monday decided to postpone the meeting.",
-      "D": "The committee which met on Monday, decided to postpone the meeting."
+      "A": "She decided to bite the bullet and accept the promotion.",
+      "B": "He let the cat out of the bag when he mentioned the surprise party.",
+      "C": "They were on cloud nine after hearing the news.",
+      "D": "She spilled the beans by revealing the secret plan."
     },
-    "correct_option": "A",
-    "explanation": "The clause \"which met on Monday\" is non‑restrictive; it must be set off by commas.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/punctuation"
+    "correct_option": "C",
+    "explanation": "'On cloud nine' means extremely happy; the sentence uses it appropriately. The other idioms are mismatched with context.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/idioms"
   }
 }
