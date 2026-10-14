@@ -1,5 +1,5 @@
 {
-  "challenge_no": 3,
+  "challenge_no": 4,
   "questions": [
     {
       "challenge_no": 1,
@@ -84,20 +84,48 @@
       "question": "Select the sentence in which the idiom is used correctly.",
       "fingerprint": "7945442bc93c846be67cafc926b2c6462bbc9721f53fd16c0569afa0a6a34398",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/idioms"
+    },
+    {
+      "challenge_no": 4,
+      "subject": "MATH",
+      "question": "A boat travels 15 km upstream in 3 hours and the same distance downstream in 2 hours. If the speed of the stream is constant, what is the speed of the boat in still water (km/h)?",
+      "fingerprint": "e68126065c998a37ff8a1e1c374a75e725b5d245acd6e46dac799d690db4590a",
+      "source_url": "https://ncert.nic.in/textbook.php?ke=2_6"
+    },
+    {
+      "challenge_no": 4,
+      "subject": "GKGS",
+      "question": "According to the 2022‑23 data released by the Ministry of Statistics and Programme Implementation, which Indian state/UT recorded the highest per‑capita Net State Domestic Product (NSDP)?",
+      "fingerprint": "ae1837070c32a220227e2937e4fe3fade07d0fd3aea63afcaf19ecb4ce130c40",
+      "source_url": "https://mospi.gov.in/publications/annual-statistical-report"
+    },
+    {
+      "challenge_no": 4,
+      "subject": "REASONING",
+      "question": "In a coding scheme each letter is first shifted three positions forward in the alphabet and then one position backward. Using this rule, the word \"MATH\" is coded as \"OCVJ\". How will the word \"CODE\" be coded?",
+      "fingerprint": "22110b11df0d5288995b7d3dff92aa95bf8260873a69763cd086e931757c3375",
+      "source_url": "https://www.indiabix.com/aptitude/coding-decoding/"
+    },
+    {
+      "challenge_no": 4,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the subjunctive mood is used correctly.",
+      "fingerprint": "8d09bab6f8a7e9a1c21a46306642fbabdaf4563ac4ba22b72a57f021f8d3cf7a",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
     }
   ],
   "last_quiz": {
-    "challenge_no": 3,
+    "challenge_no": 4,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the idiom is used correctly.",
+    "question": "Select the sentence in which the subjunctive mood is used correctly.",
     "options": {
-      "A": "She decided to bite the bullet and accept the promotion.",
-      "B": "He let the cat out of the bag when he mentioned the surprise party.",
-      "C": "They were on cloud nine after hearing the news.",
-      "D": "She spilled the beans by revealing the secret plan."
+      "A": "If I was you, I would apologize.",
+      "B": "If he were to arrive early, we could start the meeting.",
+      "C": "I wish she was there.",
+      "D": "It is essential that he attends the meeting."
     },
-    "correct_option": "C",
-    "explanation": "'On cloud nine' means extremely happy; the sentence uses it appropriately. The other idioms are mismatched with context.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/idioms"
+    "correct_option": "B",
+    "explanation": "The subjunctive form after \"if\" for hypothetical situations uses \"were\" (or \"were to\"). Sentence B follows this rule; the others misuse the subjunctive.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
   }
 }
