@@ -1,5 +1,5 @@
 {
-  "challenge_no": 4,
+  "challenge_no": 5,
   "questions": [
     {
       "challenge_no": 1,
@@ -112,20 +112,48 @@
       "question": "Select the sentence in which the subjunctive mood is used correctly.",
       "fingerprint": "8d09bab6f8a7e9a1c21a46306642fbabdaf4563ac4ba22b72a57f021f8d3cf7a",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
+    },
+    {
+      "challenge_no": 5,
+      "subject": "MATH",
+      "question": "In how many distinct ways can the letters of the word \"BANANA\" be arranged so that the two N's are not together?",
+      "fingerprint": "addbf1ce1ca36c5916c1b8185e976cb3077add9d38245bec05fcb9e7162303ba",
+      "source_url": "https://byjus.com/notes/permutations-and-combinations/"
+    },
+    {
+      "challenge_no": 5,
+      "subject": "GKGS",
+      "question": "According to the Ministry of Statistics and Programme Implementation (MOSPI) data for FY 2023-24, which sector contributed the highest share to India's Gross Value Added (GVA)?",
+      "fingerprint": "8847f98bafa989c4c55dfa1eed2179ef9280e74c33b4f11634ea7523c191ec6a",
+      "source_url": "https://mospi.gov.in"
+    },
+    {
+      "challenge_no": 5,
+      "subject": "REASONING",
+      "question": "In a coding scheme each letter is first shifted two positions forward in the alphabet and then the resulting string is reversed. Using this rule, how is the word \"MATH\" coded?",
+      "fingerprint": "52ee7c9e9d4e7b5451bb8a1cbb77f4f11dcb37ad92db565dae30ba9af6132e8c",
+      "source_url": "https://www.indiabix.com/online-test/coding-decoding/"
+    },
+    {
+      "challenge_no": 5,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the verb agrees with the subject.",
+      "fingerprint": "aef874ba63f2bd96be81ad0c2b698121973628d5bfea9e476c60f27b3424621a",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subject-verb-agreement/"
     }
   ],
   "last_quiz": {
-    "challenge_no": 4,
+    "challenge_no": 5,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the subjunctive mood is used correctly.",
+    "question": "Select the sentence in which the verb agrees with the subject.",
     "options": {
-      "A": "If I was you, I would apologize.",
-      "B": "If he were to arrive early, we could start the meeting.",
-      "C": "I wish she was there.",
-      "D": "It is essential that he attends the meeting."
+      "A": "Either the teachers or the principal are attending the meeting.",
+      "B": "Neither the manager nor his assistants were present at the conference.",
+      "C": "The team of engineers have completed the project on time.",
+      "D": "Each of the candidates have submitted their applications."
     },
     "correct_option": "B",
-    "explanation": "The subjunctive form after \"if\" for hypothetical situations uses \"were\" (or \"were to\"). Sentence B follows this rule; the others misuse the subjunctive.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
+    "explanation": "With ‘neither…nor’, the verb agrees with the nearer subject ‘assistants’ (plural), so ‘were’ is correct. The other sentences contain subject‑verb disagreement.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subject-verb-agreement/"
   }
 }
