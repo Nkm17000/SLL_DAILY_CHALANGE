@@ -1,5 +1,5 @@
 {
-  "challenge_no": 5,
+  "challenge_no": 6,
   "questions": [
     {
       "challenge_no": 1,
@@ -140,20 +140,48 @@
       "question": "Select the sentence in which the verb agrees with the subject.",
       "fingerprint": "aef874ba63f2bd96be81ad0c2b698121973628d5bfea9e476c60f27b3424621a",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subject-verb-agreement/"
+    },
+    {
+      "challenge_no": 6,
+      "subject": "MATH",
+      "question": "A man can finish a work in 12 days and another in 15 days. They work together for 4 days, then the first man leaves. How many more days will the second man need to complete the remaining work?",
+      "fingerprint": "84d78c848a7b7a858c52d7d29b39a6cce6bb1f6e72853e5261dea1b52d2bb419",
+      "source_url": "https://ncert.nic.in/textbook.php?leph1=0-12-03"
+    },
+    {
+      "challenge_no": 6,
+      "subject": "GKGS",
+      "question": "According to the Ministry of Home Affairs, which Indian state has the longest coastline?",
+      "fingerprint": "b560de81f74c8751746f459b4cffa03644961c5b5da49bb3cbf3d1a857d84433",
+      "source_url": "https://mha.gov.in/sites/default/files/Coastline%20of%20India.pdf"
+    },
+    {
+      "challenge_no": 6,
+      "subject": "REASONING",
+      "question": "In a code, each letter is shifted three positions forward in the alphabet and then the resulting string is reversed. Using this rule, the word \"PROBLEM\" is coded as:",
+      "fingerprint": "6d0b83a76e2741479aab1309c054ea51ef0420ceb5ec014ebc36effa2bda29bb",
+      "source_url": "https://www.indiabix.com/aptitude/reasoning/coding-decoding/"
+    },
+    {
+      "challenge_no": 6,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the word \"affect\" is used correctly.",
+      "fingerprint": "362b5f1dacdaf2843b33a9e8c325da4be449d4bd7b6cd57b75b048165da8c3ba",
+      "source_url": "https://www.merriam-webster.com/dictionary/affect"
     }
   ],
   "last_quiz": {
-    "challenge_no": 5,
+    "challenge_no": 6,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the verb agrees with the subject.",
+    "question": "Select the sentence in which the word \"affect\" is used correctly.",
     "options": {
-      "A": "Either the teachers or the principal are attending the meeting.",
-      "B": "Neither the manager nor his assistants were present at the conference.",
-      "C": "The team of engineers have completed the project on time.",
-      "D": "Each of the candidates have submitted their applications."
+      "A": "The cold weather will affect the crops.",
+      "B": "The new policy will have a positive affect on growth.",
+      "C": "She was deeply affect by the news.",
+      "D": "He will affect the meeting tomorrow."
     },
-    "correct_option": "B",
-    "explanation": "With ‘neither…nor’, the verb agrees with the nearer subject ‘assistants’ (plural), so ‘were’ is correct. The other sentences contain subject‑verb disagreement.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subject-verb-agreement/"
+    "correct_option": "A",
+    "explanation": "\"Affect\" is a verb meaning to influence. Sentence A uses it correctly; the others misuse the word.",
+    "source_url": "https://www.merriam-webster.com/dictionary/affect"
   }
 }
