@@ -1,5 +1,5 @@
 {
-  "challenge_no": 6,
+  "challenge_no": 7,
   "questions": [
     {
       "challenge_no": 1,
@@ -168,20 +168,48 @@
       "question": "Select the sentence in which the word \"affect\" is used correctly.",
       "fingerprint": "362b5f1dacdaf2843b33a9e8c325da4be449d4bd7b6cd57b75b048165da8c3ba",
       "source_url": "https://www.merriam-webster.com/dictionary/affect"
+    },
+    {
+      "challenge_no": 7,
+      "subject": "MATH",
+      "question": "A train covers 240 km at a uniform speed. If its speed is increased by 20 km/h, the travel time reduces by exactly 1 hour. What was the original speed of the train (km/h)?",
+      "fingerprint": "5970dc4adf2591b55f9fe92c234fda248a5ed34ffb03f14046281bdc60b090df",
+      "source_url": "https://ncert.nic.in/textbook.php?ke=1&lang=1&books=Mathematics%20Class%2010"
+    },
+    {
+      "challenge_no": 7,
+      "subject": "GKGS",
+      "question": "The International Solar Alliance (ISA), launched in 2015, has its secretariat headquartered in which Indian city?",
+      "fingerprint": "2cba0a6d45b0d5f1c93adec41aff1def5cba286d127207c3ad6aa10cac577c14",
+      "source_url": "https://isolaralliance.org/about-isa/secretariat"
+    },
+    {
+      "challenge_no": 7,
+      "subject": "REASONING",
+      "question": "In a coding scheme each letter is shifted two positions forward in the alphabet (A→C, Z→B) and then the resulting string is reversed. Using this rule, the word \"CODE\" is coded as:",
+      "fingerprint": "8d47a2db2a68f30f6512d7c484ce37fd0adc84b9b6ab8ac38357725f467b8428",
+      "source_url": "https://www.indiabix.com/reasoning/coding-decoding/"
+    },
+    {
+      "challenge_no": 7,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the verb correctly agrees with its subject.",
+      "fingerprint": "3ac07a2f56dd6bf1a18c4754ea4565a6c5e135c98daf97a79f302f915131fa49",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subject-verb-agreement"
     }
   ],
   "last_quiz": {
-    "challenge_no": 6,
+    "challenge_no": 7,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the word \"affect\" is used correctly.",
+    "question": "Select the sentence in which the verb correctly agrees with its subject.",
     "options": {
-      "A": "The cold weather will affect the crops.",
-      "B": "The new policy will have a positive affect on growth.",
-      "C": "She was deeply affect by the news.",
-      "D": "He will affect the meeting tomorrow."
+      "A": "The committee have reached a unanimous decision.",
+      "B": "The team of engineers is working late.",
+      "C": "The data shows significant variation.",
+      "D": "Neither of the players were available."
     },
-    "correct_option": "A",
-    "explanation": "\"Affect\" is a verb meaning to influence. Sentence A uses it correctly; the others misuse the word.",
-    "source_url": "https://www.merriam-webster.com/dictionary/affect"
+    "correct_option": "B",
+    "explanation": "‘Team of engineers’ is a singular collective noun, so the singular verb ‘is’ is required.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subject-verb-agreement"
   }
 }
