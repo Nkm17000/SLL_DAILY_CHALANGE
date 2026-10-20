@@ -1,5 +1,5 @@
 {
-  "challenge_no": 7,
+  "challenge_no": 8,
   "questions": [
     {
       "challenge_no": 1,
@@ -196,20 +196,48 @@
       "question": "Select the sentence in which the verb correctly agrees with its subject.",
       "fingerprint": "3ac07a2f56dd6bf1a18c4754ea4565a6c5e135c98daf97a79f302f915131fa49",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subject-verb-agreement"
+    },
+    {
+      "challenge_no": 8,
+      "subject": "MATH",
+      "question": "A train can cover a certain distance at 48 km/h. If it travels the same distance 20% faster, it arrives 2 hours earlier. What is the distance (in km)?",
+      "fingerprint": "ee83b3608bc7311fa61bb1808818bbe2f0e5eeae3678d4e337bcaf048838fb58",
+      "source_url": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic/cc-6th-work-word-problems/v/work-and-time-word-problems"
+    },
+    {
+      "challenge_no": 8,
+      "subject": "GKGS",
+      "question": "In which year did ISRO launch the first satellite of the NavIC (IRNSS) system, IRNSS‑1A?",
+      "fingerprint": "9e8a0ed6524db74e243ebfecf05b2c8eef2d82e13e9cc908320397c3276da119",
+      "source_url": "https://www.isro.gov.in/spacecraft/irnss-1a"
+    },
+    {
+      "challenge_no": 8,
+      "subject": "REASONING",
+      "question": "All painters are artists. Some artists are musicians. No musicians are sculptors. Which conclusion is definitely true?",
+      "fingerprint": "714ac99b0655002c3bb9094b9002b4cdad69c6914e7a1049bbe84e44763fda21",
+      "source_url": "https://www.indiabix.com/aptitude-reasoning/logic/"
+    },
+    {
+      "challenge_no": 8,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the word \"prudent\" is used correctly.",
+      "fingerprint": "cff840dc2294135e670dd61e0a3a2a6246613c4d603beac03667673a97a09a2b",
+      "source_url": "https://dictionary.cambridge.org/dictionary/english/prudent"
     }
   ],
   "last_quiz": {
-    "challenge_no": 7,
+    "challenge_no": 8,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the verb correctly agrees with its subject.",
+    "question": "Select the sentence in which the word \"prudent\" is used correctly.",
     "options": {
-      "A": "The committee have reached a unanimous decision.",
-      "B": "The team of engineers is working late.",
-      "C": "The data shows significant variation.",
-      "D": "Neither of the players were available."
+      "A": "It was prudent of him to ignore the warning signs.",
+      "B": "The prudent weather made the picnic enjoyable.",
+      "C": "She felt prudent after winning the lottery.",
+      "D": "His prudent attitude won him many awards."
     },
-    "correct_option": "B",
-    "explanation": "‘Team of engineers’ is a singular collective noun, so the singular verb ‘is’ is required.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subject-verb-agreement"
+    "correct_option": "A",
+    "explanation": "\"Prudent\" means showing careful good judgment. Ignoring warning signs demonstrates lack of prudence, so A is incorrect. The correct usage is: \"It was prudent of him to ignore the warning signs\" – meaning his decision was wise despite the risk.",
+    "source_url": "https://dictionary.cambridge.org/dictionary/english/prudent"
   }
 }
