@@ -1,5 +1,5 @@
 {
-  "challenge_no": 8,
+  "challenge_no": 9,
   "questions": [
     {
       "challenge_no": 1,
@@ -224,20 +224,48 @@
       "question": "Select the sentence in which the word \"prudent\" is used correctly.",
       "fingerprint": "cff840dc2294135e670dd61e0a3a2a6246613c4d603beac03667673a97a09a2b",
       "source_url": "https://dictionary.cambridge.org/dictionary/english/prudent"
+    },
+    {
+      "challenge_no": 9,
+      "subject": "MATH",
+      "question": "Pipe A can fill a tank in 12 hrs and Pipe B can empty it in 15 hrs. Two pipes of type A and one pipe of type B are opened together. How long will the tank take to fill?",
+      "fingerprint": "5103ff9a07d7587f3feda9a6736fcfee32c460cc6c56150dfcbd2041721e02fa",
+      "source_url": "https://ncert.nic.in/textbook.php?ke=10&pg=4"
+    },
+    {
+      "challenge_no": 9,
+      "subject": "GKGS",
+      "question": "In FY 2022‑23, which Indian state contributed the largest share to the country's agricultural GDP?",
+      "fingerprint": "e7b4ff7c9aa516e8659c348df00aaa7621ad70f704a4842811148417cc017317",
+      "source_url": "https://mospi.nic.in/publication/annual-report-2022-23"
+    },
+    {
+      "challenge_no": 9,
+      "subject": "REASONING",
+      "question": "All engineers are scientists. Some scientists are doctors. No doctors are teachers. Which conclusion is definitely true?",
+      "fingerprint": "3545bdd2d4eae1b4e231cc71bb0fb1a682a093850b5f6b12ad115efd3fdbb501",
+      "source_url": "https://www.indiabix.com/logical-reasoning/syllogism/"
+    },
+    {
+      "challenge_no": 9,
+      "subject": "ENGLISH",
+      "question": "Select the sentence that uses the subjunctive mood correctly.",
+      "fingerprint": "f4ed31e993b5986eb15f10b571735bfe9b321ce344fc0f9dfc5c35b2fe90e799",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
     }
   ],
   "last_quiz": {
-    "challenge_no": 8,
+    "challenge_no": 9,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the word \"prudent\" is used correctly.",
+    "question": "Select the sentence that uses the subjunctive mood correctly.",
     "options": {
-      "A": "It was prudent of him to ignore the warning signs.",
-      "B": "The prudent weather made the picnic enjoyable.",
-      "C": "She felt prudent after winning the lottery.",
-      "D": "His prudent attitude won him many awards."
+      "A": "If I was you, I would apologize.",
+      "B": "It is essential that she arrive on time.",
+      "C": "He wishes he was traveling abroad.",
+      "D": "They suggested that he goes home."
     },
-    "correct_option": "A",
-    "explanation": "\"Prudent\" means showing careful good judgment. Ignoring warning signs demonstrates lack of prudence, so A is incorrect. The correct usage is: \"It was prudent of him to ignore the warning signs\" – meaning his decision was wise despite the risk.",
-    "source_url": "https://dictionary.cambridge.org/dictionary/english/prudent"
+    "correct_option": "B",
+    "explanation": "The subjunctive form after expressions like \"essential that\" uses the base verb: \"arrive\" is correct.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
   }
 }
