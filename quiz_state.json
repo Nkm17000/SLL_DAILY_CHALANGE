@@ -1,5 +1,5 @@
 {
-  "challenge_no": 9,
+  "challenge_no": 10,
   "questions": [
     {
       "challenge_no": 1,
@@ -252,20 +252,48 @@
       "question": "Select the sentence that uses the subjunctive mood correctly.",
       "fingerprint": "f4ed31e993b5986eb15f10b571735bfe9b321ce344fc0f9dfc5c35b2fe90e799",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
+    },
+    {
+      "challenge_no": 10,
+      "subject": "MATH",
+      "question": "The sum of two positive integers is 84 and their difference is 12. What is the product of the two numbers?",
+      "fingerprint": "83d30a9dceb5fc909f9baf95011f5e420307a36d6421ef17442f46067415f3b7",
+      "source_url": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:basic-equations"
+    },
+    {
+      "challenge_no": 10,
+      "subject": "GKGS",
+      "question": "According to the Forest Survey of India 2021, which state has the highest percentage of forest cover in its geographical area?",
+      "fingerprint": "d3e0e2601bd4403209d016b4e91e093c31d5ff9d845bbdd9543502c655a21349",
+      "source_url": "https://forest.gov.in/forest-survey-data"
+    },
+    {
+      "challenge_no": 10,
+      "subject": "REASONING",
+      "question": "In a code, each letter is shifted three positions forward in the alphabet and then the resulting string is reversed. Using this rule, how is the word \"SOLVE\" coded?",
+      "fingerprint": "27108320f4428784fac640b66de18718fdfd578834b48c47c65896ba605205b7",
+      "source_url": "https://www.indiabix.com/aptitude/coding-decoding"
+    },
+    {
+      "challenge_no": 10,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the word \"fewer\" is used correctly.",
+      "fingerprint": "e6c6a2ff310079b1bdf43d71e2b47967c57db4666e46ca724d2f38e1dd10ea6b",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/fewer-or-less"
     }
   ],
   "last_quiz": {
-    "challenge_no": 9,
+    "challenge_no": 10,
     "subject": "ENGLISH",
-    "question": "Select the sentence that uses the subjunctive mood correctly.",
+    "question": "Select the sentence in which the word \"fewer\" is used correctly.",
     "options": {
-      "A": "If I was you, I would apologize.",
-      "B": "It is essential that she arrive on time.",
-      "C": "He wishes he was traveling abroad.",
-      "D": "They suggested that he goes home."
+      "A": "There are fewer than twenty students in the class.",
+      "B": "She has fewer money than before.",
+      "C": "Less people attended the concert than last year.",
+      "D": "He ate less apples than his brother."
     },
-    "correct_option": "B",
-    "explanation": "The subjunctive form after expressions like \"essential that\" uses the base verb: \"arrive\" is correct.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
+    "correct_option": "A",
+    "explanation": "\"Fewer\" is correctly used with countable nouns; \"students\" is countable, making option A correct. The other sentences misuse \"fewer\" with uncountable nouns or should use \"less.\"",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/fewer-or-less"
   }
 }
