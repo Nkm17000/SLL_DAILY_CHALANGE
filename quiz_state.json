@@ -1,5 +1,5 @@
 {
-  "challenge_no": 10,
+  "challenge_no": 11,
   "questions": [
     {
       "challenge_no": 1,
@@ -280,20 +280,48 @@
       "question": "Select the sentence in which the word \"fewer\" is used correctly.",
       "fingerprint": "e6c6a2ff310079b1bdf43d71e2b47967c57db4666e46ca724d2f38e1dd10ea6b",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/fewer-or-less"
+    },
+    {
+      "challenge_no": 11,
+      "subject": "MATH",
+      "question": "If (3x − 7) ÷ (x + 2) = 2, what is the value of x?",
+      "fingerprint": "f74754b3cae59185f85f4960a35c1e24bc183aec9142fb9f3a67fdd3a4fabb2f",
+      "source_url": "https://www.cuemath.com/algebra/solving-linear-equations/"
+    },
+    {
+      "challenge_no": 11,
+      "subject": "GKGS",
+      "question": "According to the Economic Survey 2023‑24, which sector contributed the largest share to India's GDP growth in FY 2023‑24?",
+      "fingerprint": "13ec332b013005554e37a2afe6c647a2c60d709d0250b2b6c6e2be23edc9551f",
+      "source_url": "https://www.indiabudget.gov.in/economicsurvey/"
+    },
+    {
+      "challenge_no": 11,
+      "subject": "REASONING",
+      "question": "What is the next number in the series: 3, 8, 15, 24, ?",
+      "fingerprint": "e5bcedbd52729c33b0271ee3f94641f0ff11cfd3036f0b6f472a0d093c5e04dc",
+      "source_url": "https://www.indiabix.com/aptitude/number-series/"
+    },
+    {
+      "challenge_no": 11,
+      "subject": "ENGLISH",
+      "question": "Select the sentence that correctly uses the subjunctive mood.",
+      "fingerprint": "296b0c1be455847282b388d5e9efbd5b5487a5d9cc6de6d183c417eca01676f0",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
     }
   ],
   "last_quiz": {
-    "challenge_no": 10,
+    "challenge_no": 11,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the word \"fewer\" is used correctly.",
+    "question": "Select the sentence that correctly uses the subjunctive mood.",
     "options": {
-      "A": "There are fewer than twenty students in the class.",
-      "B": "She has fewer money than before.",
-      "C": "Less people attended the concert than last year.",
-      "D": "He ate less apples than his brother."
+      "A": "If I was you, I would study harder.",
+      "B": "If I were you, I would study harder.",
+      "C": "If I am you, I would study harder.",
+      "D": "If I be you, I would study harder."
     },
-    "correct_option": "A",
-    "explanation": "\"Fewer\" is correctly used with countable nouns; \"students\" is countable, making option A correct. The other sentences misuse \"fewer\" with uncountable nouns or should use \"less.\"",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/fewer-or-less"
+    "correct_option": "B",
+    "explanation": "The subjunctive form after ‘if’ for a hypothetical situation uses ‘were’ with all persons: “If I were you…”.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
   }
 }
