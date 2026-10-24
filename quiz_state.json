@@ -1,5 +1,5 @@
 {
-  "challenge_no": 11,
+  "challenge_no": 12,
   "questions": [
     {
       "challenge_no": 1,
@@ -308,20 +308,48 @@
       "question": "Select the sentence that correctly uses the subjunctive mood.",
       "fingerprint": "296b0c1be455847282b388d5e9efbd5b5487a5d9cc6de6d183c417eca01676f0",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
+    },
+    {
+      "challenge_no": 12,
+      "subject": "MATH",
+      "question": "Pipe X can fill a tank in 8 h and Pipe Y can empty it in 12 h. Both are opened together for 3 h and then Pipe Y is closed. How many more hours will Pipe X need to fill the tank completely?",
+      "fingerprint": "1f727b5aeefa568cfd144e644bb48508836a4b1bddb67ff50684acc71f2231b5",
+      "source_url": "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:linear-equations/x2f8bb11595b61c86:word-problems/v/work-rate-problems"
+    },
+    {
+      "challenge_no": 12,
+      "subject": "GKGS",
+      "question": "From which launch pad at the Satish Dhawan Space Centre was the Gaganyaan Uncrewed Orbital Mission launched on 18 May 2023?",
+      "fingerprint": "8d1548f257a4312103b426f95ba5ede37ae8ce4f151f4bb483bc02faf4be596e",
+      "source_url": "https://www.isro.gov.in/launch-details/gaganyaan-uncrewed-orbital-mission"
+    },
+    {
+      "challenge_no": 12,
+      "subject": "REASONING",
+      "question": "Find the next term in the series: 3, 5, 12, 14, 27, 29, ?",
+      "fingerprint": "10b25bec26311c8f8affa2aec8fab6f6e37fa05399580031f1b6e26451cb7304",
+      "source_url": "https://www.indiabix.com/aptitude/number-series/"
+    },
+    {
+      "challenge_no": 12,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the verb correctly agrees with the singular collective noun “team”.",
+      "fingerprint": "500d6feeb949b61236a745d01c0954b504d8ad49d7c69ad2ceebb30fd0108adb",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/collective-nouns"
     }
   ],
   "last_quiz": {
-    "challenge_no": 11,
+    "challenge_no": 12,
     "subject": "ENGLISH",
-    "question": "Select the sentence that correctly uses the subjunctive mood.",
+    "question": "Select the sentence in which the verb correctly agrees with the singular collective noun “team”.",
     "options": {
-      "A": "If I was you, I would study harder.",
-      "B": "If I were you, I would study harder.",
-      "C": "If I am you, I would study harder.",
-      "D": "If I be you, I would study harder."
+      "A": "The team are winning the match.",
+      "B": "The team has won the match.",
+      "C": "The team were winning the match.",
+      "D": "The team have won the match."
     },
     "correct_option": "B",
-    "explanation": "The subjunctive form after ‘if’ for a hypothetical situation uses ‘were’ with all persons: “If I were you…”.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/subjunctive"
+    "explanation": "When a collective noun is treated as a single unit, the verb takes singular agreement; therefore “The team has won the match” is correct.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/collective-nouns"
   }
 }
