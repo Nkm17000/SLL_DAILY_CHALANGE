@@ -1,5 +1,5 @@
 {
-  "challenge_no": 12,
+  "challenge_no": 13,
   "questions": [
     {
       "challenge_no": 1,
@@ -336,20 +336,48 @@
       "question": "Select the sentence in which the verb correctly agrees with the singular collective noun “team”.",
       "fingerprint": "500d6feeb949b61236a745d01c0954b504d8ad49d7c69ad2ceebb30fd0108adb",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/collective-nouns"
+    },
+    {
+      "challenge_no": 13,
+      "subject": "MATH",
+      "question": "A sum of money is divided among A, B and C in the ages ratio 24:30:36. If C receives Rs 5400, how much does A receive?",
+      "fingerprint": "57368dbacdddaca3ddf64f04c87e9be58e0ddf74ac2363d98dbebfc0de9a60f9",
+      "source_url": "https://ncert.nic.in/textbook.php?ke=10&k1=5"
+    },
+    {
+      "challenge_no": 13,
+      "subject": "GKGS",
+      "question": "According to the Economic Survey 2023‑24, which sector contributed the largest share to India's services export in FY 2023‑24?",
+      "fingerprint": "a0bbe38537eafcc47b2475375fb5be99e71d79f1820c7095d5ab42681eab32ad",
+      "source_url": "https://www.indiabudget.gov.in/economicsurvey/"
+    },
+    {
+      "challenge_no": 13,
+      "subject": "REASONING",
+      "question": "In a code, each consonant is replaced by the next consonant in alphabetical order and each vowel is replaced by the previous vowel (A→U, E→A, I→E, O→I, U→O). Using this rule, what is the code for the word \"BRAIN\"?",
+      "fingerprint": "52ff58007997d0b095e70193dde6d487a0f0a3ce111b4fc7c255f4b3ce47ab86",
+      "source_url": "https://www.indiabix.com/aptitude-reasoning/"
+    },
+    {
+      "challenge_no": 13,
+      "subject": "ENGLISH",
+      "question": "Choose the sentence in which the idiom is used correctly.",
+      "fingerprint": "9747ad18c7b79d62f17c8f51964318f00ac634362745d492e40c1481c00ac984",
+      "source_url": "https://dictionary.cambridge.org/us/dictionary/english/spill-the-beans"
     }
   ],
   "last_quiz": {
-    "challenge_no": 12,
+    "challenge_no": 13,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the verb correctly agrees with the singular collective noun “team”.",
+    "question": "Choose the sentence in which the idiom is used correctly.",
     "options": {
-      "A": "The team are winning the match.",
-      "B": "The team has won the match.",
-      "C": "The team were winning the match.",
-      "D": "The team have won the match."
+      "A": "He kicked the bucket after the long illness.",
+      "B": "She let the cat out of the bag when she announced the surprise.",
+      "C": "They hit the sack early due to the meeting.",
+      "D": "He spilled the beans by forgetting the secret."
     },
-    "correct_option": "B",
-    "explanation": "When a collective noun is treated as a single unit, the verb takes singular agreement; therefore “The team has won the match” is correct.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/collective-nouns"
+    "correct_option": "D",
+    "explanation": "\"Spill the beans\" means to reveal a secret; option D uses it appropriately.",
+    "source_url": "https://dictionary.cambridge.org/us/dictionary/english/spill-the-beans"
   }
 }
