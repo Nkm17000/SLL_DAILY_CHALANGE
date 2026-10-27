@@ -1,5 +1,5 @@
 {
-  "challenge_no": 13,
+  "challenge_no": 14,
   "questions": [
     {
       "challenge_no": 1,
@@ -364,20 +364,48 @@
       "question": "Choose the sentence in which the idiom is used correctly.",
       "fingerprint": "9747ad18c7b79d62f17c8f51964318f00ac634362745d492e40c1481c00ac984",
       "source_url": "https://dictionary.cambridge.org/us/dictionary/english/spill-the-beans"
+    },
+    {
+      "challenge_no": 14,
+      "subject": "MATH",
+      "question": "A man can finish a work in 20 days and another can finish it in 30 days. They work together for 5 days, after which the first man leaves. How many more days will the second man need to complete the remaining work?",
+      "fingerprint": "bcf65c087bb49b36ff5ccc2c2592a2a56e40991cf9215cf2fd6fc3bdf85f578a",
+      "source_url": "https://www.indiabix.com/quantitative-aptitude/"
+    },
+    {
+      "challenge_no": 14,
+      "subject": "GKGS",
+      "question": "As of March 2023, which Indian state has the highest installed solar‑power capacity?",
+      "fingerprint": "7c7f2b77c193a0fe6f407ab6710b27c57e99df71d216110e7b17fd43b5fe500c",
+      "source_url": "https://mnre.gov.in/solar/"
+    },
+    {
+      "challenge_no": 14,
+      "subject": "REASONING",
+      "question": "In a code each letter is shifted three positions forward in the alphabet and then the resulting string is reversed. Using this rule, the word “WORLD” is coded as:",
+      "fingerprint": "949dc7dc34771f3f013371f07f900d4750efcfad1914b92cfedf2f69b83493fc",
+      "source_url": "https://www.indiabix.com/reasoning/coding-decoding/"
+    },
+    {
+      "challenge_no": 14,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the verb agrees correctly with the collective noun “team”.",
+      "fingerprint": "10a573931e5f7725f6fcd86eb9b2cd712c057d001d399cccc8243c28b5778e20",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/collective-nouns/"
     }
   ],
   "last_quiz": {
-    "challenge_no": 13,
+    "challenge_no": 14,
     "subject": "ENGLISH",
-    "question": "Choose the sentence in which the idiom is used correctly.",
+    "question": "Select the sentence in which the verb agrees correctly with the collective noun “team”.",
     "options": {
-      "A": "He kicked the bucket after the long illness.",
-      "B": "She let the cat out of the bag when she announced the surprise.",
-      "C": "They hit the sack early due to the meeting.",
-      "D": "He spilled the beans by forgetting the secret."
+      "A": "The team are planning their strategy for the upcoming match.",
+      "B": "The team has decided to practice more intensively.",
+      "C": "The team were excited about their victory.",
+      "D": "The team have won its first game."
     },
-    "correct_option": "D",
-    "explanation": "\"Spill the beans\" means to reveal a secret; option D uses it appropriately.",
-    "source_url": "https://dictionary.cambridge.org/us/dictionary/english/spill-the-beans"
+    "correct_option": "B",
+    "explanation": "“Team” is a singular collective noun; it takes a singular verb – “has”.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/collective-nouns/"
   }
 }
