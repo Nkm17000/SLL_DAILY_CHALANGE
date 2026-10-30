@@ -1,5 +1,5 @@
 {
-  "challenge_no": 14,
+  "challenge_no": 15,
   "questions": [
     {
       "challenge_no": 1,
@@ -392,20 +392,48 @@
       "question": "Select the sentence in which the verb agrees correctly with the collective noun “team”.",
       "fingerprint": "10a573931e5f7725f6fcd86eb9b2cd712c057d001d399cccc8243c28b5778e20",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/collective-nouns/"
+    },
+    {
+      "challenge_no": 15,
+      "subject": "MATH",
+      "question": "A boat travels upstream at 12 km/h and downstream at 20 km/h. If the distance between two towns is 84 km, what is the total time taken for the round trip?",
+      "fingerprint": "e796d9028c371684c8d737d341e370534a36390d18ce21fc7b2799db126743b8",
+      "source_url": "https://en.wikipedia.org/wiki/Upstream_and_downstream"
+    },
+    {
+      "challenge_no": 15,
+      "subject": "GKGS",
+      "question": "As of 2023, which Indian state has the highest number of UNESCO World Heritage Sites?",
+      "fingerprint": "ab2806a90474998f164945a27aa7431672957015eb49116b9acf89643d2bc807",
+      "source_url": "https://whc.unesco.org/en/statesparties/in"
+    },
+    {
+      "challenge_no": 15,
+      "subject": "REASONING",
+      "question": "In a code each letter is shifted forward by two positions in the alphabet and then the resulting string is reversed. Using this rule, how is the word \"MATH\" coded?",
+      "fingerprint": "17d48e89fa46b06c53b1bed66052c56f4357a931d1e97ee9c46215f0f99e6f11",
+      "source_url": "https://www.indiabix.com/aptitude/coding-decoding/"
+    },
+    {
+      "challenge_no": 15,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the comparative form of \"good\" is used correctly.",
+      "fingerprint": "60078e35891fcd7ace247c284fce25b9fd12db4b0f77b0ae66af621fecfe90d1",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/comparatives"
     }
   ],
   "last_quiz": {
-    "challenge_no": 14,
+    "challenge_no": 15,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the verb agrees correctly with the collective noun “team”.",
+    "question": "Select the sentence in which the comparative form of \"good\" is used correctly.",
     "options": {
-      "A": "The team are planning their strategy for the upcoming match.",
-      "B": "The team has decided to practice more intensively.",
-      "C": "The team were excited about their victory.",
-      "D": "The team have won its first game."
+      "A": "She is more good than her sister.",
+      "B": "She is better than her sister.",
+      "C": "She is gooder than her sister.",
+      "D": "She is the goodest of all."
     },
     "correct_option": "B",
-    "explanation": "“Team” is a singular collective noun; it takes a singular verb – “has”.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/collective-nouns/"
+    "explanation": "The correct comparative of \"good\" is \"better\"; the other forms are non‑standard.",
+    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/comparatives"
   }
 }
