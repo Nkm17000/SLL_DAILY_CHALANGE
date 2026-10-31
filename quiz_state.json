@@ -1,5 +1,5 @@
 {
-  "challenge_no": 15,
+  "challenge_no": 16,
   "questions": [
     {
       "challenge_no": 1,
@@ -420,20 +420,48 @@
       "question": "Select the sentence in which the comparative form of \"good\" is used correctly.",
       "fingerprint": "60078e35891fcd7ace247c284fce25b9fd12db4b0f77b0ae66af621fecfe90d1",
       "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/comparatives"
+    },
+    {
+      "challenge_no": 16,
+      "subject": "MATH",
+      "question": "A sum of Rs 12,000 is invested in two schemes: one offers 8% simple interest per annum and the other 12% simple interest per annum. If the total interest earned in one year is Rs 1,080, how much is invested at 12%?",
+      "fingerprint": "73175b2fdb2efd9c175021e1598e31c425af5a81d8c4f236aff5f9a77a2af9ec",
+      "source_url": "https://ncert.nic.in/textbook.php?ke=11&subject=mathematics"
+    },
+    {
+      "challenge_no": 16,
+      "subject": "GKGS",
+      "question": "The Vikram Sarabhai Space Centre (VSSC), a major centre of ISRO, is located in which Indian city?",
+      "fingerprint": "59423daf3d03773a79dbf07473e7aa9c6af55f3316635432880cbf2b3d36f8b9",
+      "source_url": "https://www.isro.gov.in/vikram-sarabhai-space-centre"
+    },
+    {
+      "challenge_no": 16,
+      "subject": "REASONING",
+      "question": "Find the next term in the series: 3, 8, 15, 24, 35, ?",
+      "fingerprint": "614b5d8cb3cbe33e8fa694a047f4df577e23f04280c669ca96f4d290b72c53d5",
+      "source_url": "https://www.indiabix.com/aptitude/number-series/"
+    },
+    {
+      "challenge_no": 16,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the idiom \"burn the midnight oil\" is used correctly.",
+      "fingerprint": "ca9783a203e05991a71f550196c6e0655ed6287ace621b8b839d579aa40040da",
+      "source_url": "https://dictionary.cambridge.org/dictionary/english/burn-the-midnight-oil"
     }
   ],
   "last_quiz": {
-    "challenge_no": 15,
+    "challenge_no": 16,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the comparative form of \"good\" is used correctly.",
+    "question": "Select the sentence in which the idiom \"burn the midnight oil\" is used correctly.",
     "options": {
-      "A": "She is more good than her sister.",
-      "B": "She is better than her sister.",
-      "C": "She is gooder than her sister.",
-      "D": "She is the goodest of all."
+      "A": "She decided to burn the midnight oil after finishing her morning workout.",
+      "B": "He had to burn the midnight oil to complete the project before the deadline.",
+      "C": "They will burn the midnight oil during the summer holidays.",
+      "D": "The chef will burn the midnight oil while preparing breakfast."
     },
     "correct_option": "B",
-    "explanation": "The correct comparative of \"good\" is \"better\"; the other forms are non‑standard.",
-    "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/comparatives"
+    "explanation": "\"Burn the midnight oil\" means to work late into the night, usually to meet a deadline, which is expressed in option B.",
+    "source_url": "https://dictionary.cambridge.org/dictionary/english/burn-the-midnight-oil"
   }
 }
