@@ -1,5 +1,5 @@
 {
-  "challenge_no": 16,
+  "challenge_no": 17,
   "questions": [
     {
       "challenge_no": 1,
@@ -448,20 +448,48 @@
       "question": "Select the sentence in which the idiom \"burn the midnight oil\" is used correctly.",
       "fingerprint": "ca9783a203e05991a71f550196c6e0655ed6287ace621b8b839d579aa40040da",
       "source_url": "https://dictionary.cambridge.org/dictionary/english/burn-the-midnight-oil"
+    },
+    {
+      "challenge_no": 17,
+      "subject": "MATH",
+      "question": "A can complete a work in 15 days and B in 20 days. They work together for 4 days, after which B leaves. In how many additional days will A finish the remaining work?",
+      "fingerprint": "a1dcb1793899a2a9286f2fe5c72e59717eb300bfcdc6e3fcc42fb97096ee292b",
+      "source_url": "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-ratios-prop/cc-5th-work/v/work-problems"
+    },
+    {
+      "challenge_no": 17,
+      "subject": "GKGS",
+      "question": "As of March 2023, which Indian state has the highest installed wind‑power capacity?",
+      "fingerprint": "60a388647e01e769e6c3d684a3cc95c259e061b0f181eb2046ceeb0fddd47bd6",
+      "source_url": "https://mnre.gov.in/wind-power/"
+    },
+    {
+      "challenge_no": 17,
+      "subject": "REASONING",
+      "question": "All architects are designers. Some designers are artists. No artist is a plumber. Which of the following conclusions is definitely true?",
+      "fingerprint": "3a62d06e312d50f796eb9d93a41b34cbea7e8a72d6cfc51f9caf12ee0099c54e",
+      "source_url": "https://en.wikipedia.org/wiki/Syllogism"
+    },
+    {
+      "challenge_no": 17,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the word \"affluent\" is used correctly.",
+      "fingerprint": "697da8a47a16accccf83a9d80dad50993bc733ece504f3c17cc551ae1b16a6dd",
+      "source_url": "https://www.merriam-webster.com/dictionary/affluent"
     }
   ],
   "last_quiz": {
-    "challenge_no": 16,
+    "challenge_no": 17,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the idiom \"burn the midnight oil\" is used correctly.",
+    "question": "Select the sentence in which the word \"affluent\" is used correctly.",
     "options": {
-      "A": "She decided to burn the midnight oil after finishing her morning workout.",
-      "B": "He had to burn the midnight oil to complete the project before the deadline.",
-      "C": "They will burn the midnight oil during the summer holidays.",
-      "D": "The chef will burn the midnight oil while preparing breakfast."
+      "A": "The affluent neighborhood was known for its modest houses.",
+      "B": "She comes from an affluent family that has owned the business for generations.",
+      "C": "The affluent of the river made it difficult for boats to navigate.",
+      "D": "The affluent was raining heavily."
     },
     "correct_option": "B",
-    "explanation": "\"Burn the midnight oil\" means to work late into the night, usually to meet a deadline, which is expressed in option B.",
-    "source_url": "https://dictionary.cambridge.org/dictionary/english/burn-the-midnight-oil"
+    "explanation": "\"Affluent\" means wealthy or prosperous. Sentence B correctly describes a wealthy family. The other sentences misuse the word.",
+    "source_url": "https://www.merriam-webster.com/dictionary/affluent"
   }
 }
