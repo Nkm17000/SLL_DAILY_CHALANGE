@@ -1,5 +1,5 @@
 {
-  "challenge_no": 17,
+  "challenge_no": 18,
   "questions": [
     {
       "challenge_no": 1,
@@ -476,20 +476,48 @@
       "question": "Select the sentence in which the word \"affluent\" is used correctly.",
       "fingerprint": "697da8a47a16accccf83a9d80dad50993bc733ece504f3c17cc551ae1b16a6dd",
       "source_url": "https://www.merriam-webster.com/dictionary/affluent"
+    },
+    {
+      "challenge_no": 18,
+      "subject": "MATH",
+      "question": "Find the smallest positive integer n such that n! ends with exactly 2023 trailing zeros.",
+      "fingerprint": "cdfef36125463220bfcf7ae060b6125223ecf0ab1e88d19f697030c847a4c070",
+      "source_url": "https://www.geeksforgeeks.org/count-trailing-zeroes-factorial/"
+    },
+    {
+      "challenge_no": 18,
+      "subject": "GKGS",
+      "question": "According to the Ministry of Statistics and Programme Implementation (MOSPI) estimates for FY 2022‑23, which Indian state/UT recorded the highest per‑capita Net State Domestic Product (NSDP)?",
+      "fingerprint": "71157c1d8756b3644c0680363883519c96d3a1facb3861df48d9d136da20a352",
+      "source_url": "https://mospi.gov.in/publications/annual-report"
+    },
+    {
+      "challenge_no": 18,
+      "subject": "REASONING",
+      "question": "In a code, each letter is shifted three positions forward in the alphabet (A→D, Z→C) and then the resulting string is written backwards. Using this rule, how is the word \"VECTOR\" coded?",
+      "fingerprint": "38ce976c69a1e50da63c0622cd9680d9d8e13a6aedaa10a53d86bbb35dfa4860",
+      "source_url": "https://www.indiabix.com/aptitude/coding-decoding/"
+    },
+    {
+      "challenge_no": 18,
+      "subject": "ENGLISH",
+      "question": "Select the sentence that uses parallel structure correctly.",
+      "fingerprint": "443c3a12255bd11a2917a4c845f5f782ef566b695ffba6e7dd50fb27efbd9183",
+      "source_url": "https://www.grammarly.com/blog/parallel-structure/"
     }
   ],
   "last_quiz": {
-    "challenge_no": 17,
+    "challenge_no": 18,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the word \"affluent\" is used correctly.",
+    "question": "Select the sentence that uses parallel structure correctly.",
     "options": {
-      "A": "The affluent neighborhood was known for its modest houses.",
-      "B": "She comes from an affluent family that has owned the business for generations.",
-      "C": "The affluent of the river made it difficult for boats to navigate.",
-      "D": "The affluent was raining heavily."
+      "A": "She likes reading, to write, and painting.",
+      "B": "He enjoys swimming, cycling, and to run.",
+      "C": "They decided to travel, to explore, and to learn.",
+      "D": "The committee will discuss the budget, evaluate proposals, and approve the plan."
     },
-    "correct_option": "B",
-    "explanation": "\"Affluent\" means wealthy or prosperous. Sentence B correctly describes a wealthy family. The other sentences misuse the word.",
-    "source_url": "https://www.merriam-webster.com/dictionary/affluent"
+    "correct_option": "D",
+    "explanation": "Option D maintains parallel verb forms (discuss, evaluate, approve). The other sentences mix infinitives, gerunds, and nouns, breaking parallelism.",
+    "source_url": "https://www.grammarly.com/blog/parallel-structure/"
   }
 }
