@@ -1,5 +1,5 @@
 {
-  "challenge_no": 18,
+  "challenge_no": 19,
   "questions": [
     {
       "challenge_no": 1,
@@ -504,20 +504,48 @@
       "question": "Select the sentence that uses parallel structure correctly.",
       "fingerprint": "443c3a12255bd11a2917a4c845f5f782ef566b695ffba6e7dd50fb27efbd9183",
       "source_url": "https://www.grammarly.com/blog/parallel-structure/"
+    },
+    {
+      "challenge_no": 19,
+      "subject": "MATH",
+      "question": "A tank can be filled by Pipe X in 9 hours and emptied by Pipe Y in 12 hours. After Pipe X works alone for 4 hours, both pipes are opened together. How many additional hours are required to fill the tank?",
+      "fingerprint": "8dd8b99630e0cdd1ac1a93c015ab0a86dd7508740d2c0e3ad3c2af449c1a2974",
+      "source_url": "https://www.mathsisfun.com/word-problems/pipes.html"
+    },
+    {
+      "challenge_no": 19,
+      "subject": "GKGS",
+      "question": "As of 2023, which Indian state has the highest number of National Parks?",
+      "fingerprint": "4a95802277b9d75861cf5c760ba90a4ed2835f90a8e0f073cfbd75793d3d3214",
+      "source_url": "https://forest.gov.in/website/ProtectedAreas/ProtectedAreas.aspx"
+    },
+    {
+      "challenge_no": 19,
+      "subject": "REASONING",
+      "question": "In a code each letter is shifted three positions forward in the alphabet and then the resulting string is reversed. Using this rule, the word 'TRAIN' is coded as:",
+      "fingerprint": "cdc1db4271ae4800e8ae00d976784a8a28f32866bbec9ad355f509c64f9f3b27",
+      "source_url": "https://www.indiabix.com/aptitude/letter-coding/"
+    },
+    {
+      "challenge_no": 19,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the word 'mitigate' is used correctly.",
+      "fingerprint": "39095aaae7405bab8a6526b023d154b4cd9cb194a3aaa5f1785021fc7987132b",
+      "source_url": "https://www.merriam-webster.com/dictionary/mitigate"
     }
   ],
   "last_quiz": {
-    "challenge_no": 18,
+    "challenge_no": 19,
     "subject": "ENGLISH",
-    "question": "Select the sentence that uses parallel structure correctly.",
+    "question": "Select the sentence in which the word 'mitigate' is used correctly.",
     "options": {
-      "A": "She likes reading, to write, and painting.",
-      "B": "He enjoys swimming, cycling, and to run.",
-      "C": "They decided to travel, to explore, and to learn.",
-      "D": "The committee will discuss the budget, evaluate proposals, and approve the plan."
+      "A": "The new policy will mitigate the company's profits.",
+      "B": "She tried to mitigate the pain by taking a strong analgesic.",
+      "C": "He mitigated the invitation by arriving late.",
+      "D": "The rain mitigated the garden's growth."
     },
-    "correct_option": "D",
-    "explanation": "Option D maintains parallel verb forms (discuss, evaluate, approve). The other sentences mix infinitives, gerunds, and nouns, breaking parallelism.",
-    "source_url": "https://www.grammarly.com/blog/parallel-structure/"
+    "correct_option": "B",
+    "explanation": "'Mitigate' means to make less severe; it correctly describes reducing pain. The other sentences misuse the word.",
+    "source_url": "https://www.merriam-webster.com/dictionary/mitigate"
   }
 }
