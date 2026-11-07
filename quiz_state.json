@@ -1,5 +1,5 @@
 {
-  "challenge_no": 19,
+  "challenge_no": 20,
   "questions": [
     {
       "challenge_no": 1,
@@ -532,20 +532,48 @@
       "question": "Select the sentence in which the word 'mitigate' is used correctly.",
       "fingerprint": "39095aaae7405bab8a6526b023d154b4cd9cb194a3aaa5f1785021fc7987132b",
       "source_url": "https://www.merriam-webster.com/dictionary/mitigate"
+    },
+    {
+      "challenge_no": 20,
+      "subject": "MATH",
+      "question": "A shopkeeper marks an article at Rs 1800. He offers a discount of 20% on the marked price and then gives a cash rebate of Rs 150 on the discounted price. What is the final selling price?",
+      "fingerprint": "d394ef25d5944ec1ab521bd91a6ed90de3aa2cb406c4dae9f4295f01b6c7415b",
+      "source_url": "https://www.investopedia.com/terms/d/discount.asp"
+    },
+    {
+      "challenge_no": 20,
+      "subject": "GKGS",
+      "question": "According to the 2011 Census of India, which Union Territory has the highest population density (persons per square kilometre)?",
+      "fingerprint": "ce5c14504db31f6ee2d417e997ce89e512a14243dc9a78095fa68d0925ad08ab",
+      "source_url": "https://censusindia.gov.in/2011-common/Population_Density.html"
+    },
+    {
+      "challenge_no": 20,
+      "subject": "REASONING",
+      "question": "In a coding scheme each letter is shifted three positions forward in the alphabet (A→D, Z→C) and then the resulting string is reversed. Using this rule, how is the word \"TRAIN\" coded?",
+      "fingerprint": "4dd79765455e6197841aa2a16e418a3ce99d9f888f0cc01873727d9f817a20d7",
+      "source_url": "https://www.indiabix.com/aptitude/reasoning/coding-decoding/"
+    },
+    {
+      "challenge_no": 20,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the word \"alleviate\" is used correctly.",
+      "fingerprint": "e2c6d18ab85bd2fc2cd11df512d8fa04e93a687628ac3afeca15f92640c0d15c",
+      "source_url": "https://www.merriam-webster.com/dictionary/alleviate"
     }
   ],
   "last_quiz": {
-    "challenge_no": 19,
+    "challenge_no": 20,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the word 'mitigate' is used correctly.",
+    "question": "Select the sentence in which the word \"alleviate\" is used correctly.",
     "options": {
-      "A": "The new policy will mitigate the company's profits.",
-      "B": "She tried to mitigate the pain by taking a strong analgesic.",
-      "C": "He mitigated the invitation by arriving late.",
-      "D": "The rain mitigated the garden's growth."
+      "A": "The new policy will alleviate the company's profits.",
+      "B": "She took an aspirin to alleviate her headache.",
+      "C": "He tried to alleviate the painting by adding more colors.",
+      "D": "The chef used spices to alleviate the soup."
     },
     "correct_option": "B",
-    "explanation": "'Mitigate' means to make less severe; it correctly describes reducing pain. The other sentences misuse the word.",
-    "source_url": "https://www.merriam-webster.com/dictionary/mitigate"
+    "explanation": "\"Alleviate\" means to reduce or ease something painful or troublesome; it correctly describes easing a headache.",
+    "source_url": "https://www.merriam-webster.com/dictionary/alleviate"
   }
 }
