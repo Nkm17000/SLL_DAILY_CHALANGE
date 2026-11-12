@@ -1,5 +1,5 @@
 {
-  "challenge_no": 20,
+  "challenge_no": 21,
   "questions": [
     {
       "challenge_no": 1,
@@ -560,20 +560,48 @@
       "question": "Select the sentence in which the word \"alleviate\" is used correctly.",
       "fingerprint": "e2c6d18ab85bd2fc2cd11df512d8fa04e93a687628ac3afeca15f92640c0d15c",
       "source_url": "https://www.merriam-webster.com/dictionary/alleviate"
+    },
+    {
+      "challenge_no": 21,
+      "subject": "MATH",
+      "question": "A sum of money is divided among A, B and C in the ratio of their ages, which are three consecutive odd integers. If C receives Rs 7200, what is the total amount?",
+      "fingerprint": "2ce632738f41ce3c78cf300e2e134d5847482ebdaad46609478a2a435fff7f18",
+      "source_url": "https://ncert.nic.in/textbook.php?lev=2&bk_id=334"
+    },
+    {
+      "challenge_no": 21,
+      "subject": "GKGS",
+      "question": "According to the Ministry of Statistics and Programme Implementation (MOSPI) data for FY 2022‑23, which Indian state contributed the highest share to the country's agricultural GDP?",
+      "fingerprint": "485af81ad946a4b5163602ed1924106f80f1444aacd3f9b3da47cd2e3ef06e5a",
+      "source_url": "https://mospi.gov.in/sites/default/files/publication_reports/AGRI_GDP_2022-23.pdf"
+    },
+    {
+      "challenge_no": 21,
+      "subject": "REASONING",
+      "question": "In a coding scheme each letter is shifted two positions forward in the alphabet (A→C, Z→B) and then the resulting string is reversed. Using this rule, how is the word \"TRAIN\" coded?",
+      "fingerprint": "f74f8cbcdb9f3907113e34b35b2203254a7cf77b2a8083ce95fb54541c33d7d3",
+      "source_url": "https://www.indiabix.com/reasoning/coding-decoding/"
+    },
+    {
+      "challenge_no": 21,
+      "subject": "ENGLISH",
+      "question": "Select the sentence in which the idiom \"bark up the wrong tree\" is used correctly.",
+      "fingerprint": "1dea18b159dacf336e1cf0eccba6e9a0fa50246e67a9f710130cc4599ecba582",
+      "source_url": "https://www.merriam-webster.com/dictionary/bark%20up%20the%20wrong%20tree"
     }
   ],
   "last_quiz": {
-    "challenge_no": 20,
+    "challenge_no": 21,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the word \"alleviate\" is used correctly.",
+    "question": "Select the sentence in which the idiom \"bark up the wrong tree\" is used correctly.",
     "options": {
-      "A": "The new policy will alleviate the company's profits.",
-      "B": "She took an aspirin to alleviate her headache.",
-      "C": "He tried to alleviate the painting by adding more colors.",
-      "D": "The chef used spices to alleviate the soup."
+      "A": "He thought the manager was responsible, but he was barking up the wrong tree.",
+      "B": "She accused me of cheating, but I was barking up the wrong tree.",
+      "C": "If you keep missing the deadline, you're barking up the wrong tree.",
+      "D": "The chef's new recipe is definitely barking up the wrong tree."
     },
     "correct_option": "B",
-    "explanation": "\"Alleviate\" means to reduce or ease something painful or troublesome; it correctly describes easing a headache.",
-    "source_url": "https://www.merriam-webster.com/dictionary/alleviate"
+    "explanation": "\"Bark up the wrong tree\" means to make a wrong accusation or pursue a mistaken line of thought; it fits the context of being wrongly accused.",
+    "source_url": "https://www.merriam-webster.com/dictionary/bark%20up%20the%20wrong%20tree"
   }
 }
