@@ -1,5 +1,5 @@
 {
-  "challenge_no": 21,
+  "challenge_no": 22,
   "questions": [
     {
       "challenge_no": 1,
@@ -588,20 +588,48 @@
       "question": "Select the sentence in which the idiom \"bark up the wrong tree\" is used correctly.",
       "fingerprint": "1dea18b159dacf336e1cf0eccba6e9a0fa50246e67a9f710130cc4599ecba582",
       "source_url": "https://www.merriam-webster.com/dictionary/bark%20up%20the%20wrong%20tree"
+    },
+    {
+      "challenge_no": 22,
+      "subject": "MATH",
+      "question": "A sum of money is invested at simple interest for 2 years at 6% per annum and the same sum is invested at compound interest for 2 years at 10% per annum. If the difference between the compound interest and the simple interest earned is Rs 180, what is the principal amount?",
+      "fingerprint": "e9b20709e279ba51a2576c35623cd3853b7dde8328bcd1558436038a16cc3139",
+      "source_url": "https://ncert.nic.in/textbook.php?ke=2"
+    },
+    {
+      "challenge_no": 22,
+      "subject": "GKGS",
+      "question": "Which article of the Indian Constitution deals with the formation of new states and the alteration of the areas of existing states?",
+      "fingerprint": "351315f863149ba0ed45e85d326854878609dcdbaa33b14f624fe5e2aebc4bfc",
+      "source_url": "https://legislative.gov.in/constitution-of-india"
+    },
+    {
+      "challenge_no": 22,
+      "subject": "REASONING",
+      "question": "In a code each letter is shifted forward by two positions in the alphabet (A→C, Z→B) and then the resulting string is reversed. Using this rule, how is the word \"GREEN\" coded?",
+      "fingerprint": "be9b426b7e30bf53d868e84593b510aac1f250177d0c2a15a2757c2dc5cb3b53",
+      "source_url": "https://en.wikipedia.org/wiki/Coding_(cryptography)"
+    },
+    {
+      "challenge_no": 22,
+      "subject": "ENGLISH",
+      "question": "Choose the sentence in which the word \"prerequisite\" is used correctly.",
+      "fingerprint": "bd830a8e8892b90aab18c667d17645a48dd3f927d28314a67fa653e9ee149777",
+      "source_url": "https://www.merriam-webster.com/dictionary/prerequisite"
     }
   ],
   "last_quiz": {
-    "challenge_no": 21,
+    "challenge_no": 22,
     "subject": "ENGLISH",
-    "question": "Select the sentence in which the idiom \"bark up the wrong tree\" is used correctly.",
+    "question": "Choose the sentence in which the word \"prerequisite\" is used correctly.",
     "options": {
-      "A": "He thought the manager was responsible, but he was barking up the wrong tree.",
-      "B": "She accused me of cheating, but I was barking up the wrong tree.",
-      "C": "If you keep missing the deadline, you're barking up the wrong tree.",
-      "D": "The chef's new recipe is definitely barking up the wrong tree."
+      "A": "A good understanding of algebra is a prerequisite for learning calculus.",
+      "B": "Having a prerequisite of basic computer skills, she enrolled in the programming course.",
+      "C": "The prerequisite were clearly mentioned in the brochure.",
+      "D": "He considered the exam as a prerequisite for his future."
     },
-    "correct_option": "B",
-    "explanation": "\"Bark up the wrong tree\" means to make a wrong accusation or pursue a mistaken line of thought; it fits the context of being wrongly accused.",
-    "source_url": "https://www.merriam-webster.com/dictionary/bark%20up%20the%20wrong%20tree"
+    "correct_option": "A",
+    "explanation": "\"Prerequisite\" means a required prior condition; option A correctly uses it to indicate a necessary prior knowledge.",
+    "source_url": "https://www.merriam-webster.com/dictionary/prerequisite"
   }
 }
